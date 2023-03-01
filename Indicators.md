@@ -1,25 +1,25 @@
 # List of indicators
-This list contains all Norwegian Indicators for Alien Species for which an R script is available.
+This list contains all Norwegian Indicators for Alien Species.
 
 ## Spread (pathways)
-The spread category contains four indicators, for all of which there is R code
+The spread category contains four indicators, for all of which there is **R** code
 
 ### S1 – Introduction rate of novel alien species
-R code for S1 is [available](S1.R).
+**R** code for S1 is [available](S1.R).
 
 Note that the script can only be run if the following two datasets are downloaded first:
 * [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
 * [Data from: Pathways of introduction of alien species in Norway (Sandvik et al. 2022)](https://doi.org/10.5061/dryad.4b8gthtg7)
 
 ### S2 – Active pathways of introduction
-R code for S2 is [available](S2.R).
+**R** code for S2 is [available](S2.R).
 
 Note that the script can only be run if the following two datasets are downloaded first:
 * [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
 * [Data from: Pathways of introduction of alien species in Norway (Sandvik et al. 2022)](https://doi.org/10.5061/dryad.4b8gthtg7)
 
 ### S3 – Active pathways of secondary spread
-R code for S3 is [available](S3.R).
+**R** code for S3 is [available](S3.R).
 
 Note that the script can only be run if the following two datasets are downloaded first:
 * [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
@@ -46,7 +46,7 @@ Note that the script can only be run if the following two datasets are downloade
 ### T3 – Threat to ecosystem services
 
 ## Input
-For input indicators, no R script is available (yet).
+For input indicators, no **R** script is available (yet).
 
 The indicators are:
 * I1 – Money spent
@@ -56,7 +56,7 @@ The indicators are:
 * I5 – Goal-orientation of the Action Plan
 
 ## Result (output)
-For result indicators, no R script is available (yet).
+For result indicators, no **R** script is available (yet).
 
 The indicators are:
 * R1 – Extent of measures against terrestrial alien species
@@ -68,7 +68,7 @@ The indicators are:
 * R7 – Measures with cost–benefit analysis
 
 ## Effect (outcomes)
-For effect indicators, no R script is available (yet).
+For effect indicators, no **R** script is available (yet).
 
 The indicators are:
 * E1 – Alien species eradicated
