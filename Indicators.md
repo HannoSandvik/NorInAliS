@@ -2,7 +2,7 @@
 This list contains all Norwegian Indicators for Alien Species.
 
 ## Spread (pathways)
-The spread category contains four indicators, for all of which there is **R** code
+The spread category contains four indicators, for all of which there is **R** code.
 
 ### S1 – Introduction rate of novel alien species
 **R** code for S1 is [available](S1.R).
@@ -26,24 +26,37 @@ Note that the script can only be run if the following two datasets are downloade
 * [Data from: Pathways of introduction of alien species in Norway (Sandvik et al. 2022)](https://doi.org/10.5061/dryad.4b8gthtg7)
 
 ### S4 – Import rate reported from monitoring
+**R** code for S4 is [not yet available](S4.R).
 
 ## Pressure (impacts)
+The pressure category contains five indicators, for all of which there is **R** code.
+
 ### P1 – Number of alien species
+**R** code for P1 is [not yet available](P1.R).
 
 ### P2 – Extent of terrestrial alien species
+**R** code for P2 is [not yet available](P2.R).
 
 ### P3 – Extent of alien freshwater species
+**R** code for P3 is [not yet available](P3.R).
 
 ### P4 – Extent of marine alien species
+**R** code for P4 is [not yet available](P4.R).
 
 ### P5 – Alien species reported from monitoring
+**R** code for P5 is [not yet available](P5.R).
 
 ## Threat (state)
+The threat category contains three indicators, for two of which there is **R** code.
+
 ### T1 – Threat to native species
+**R** code for T1 will be published elsewhere.
 
 ### T2 – Threat to ecosystems
+**R** code for T2 will be published elsewhere.
 
 ### T3 – Threat to ecosystem services
+For indicator T3, no **R** code is available.
 
 ## Input
 For input indicators, no **R** script is available (yet).
