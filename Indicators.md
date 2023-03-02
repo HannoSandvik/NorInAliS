@@ -26,13 +26,18 @@ Note that the script can only be run if the following two datasets are downloade
 * [Data from: Pathways of introduction of alien species in Norway (Sandvik et al. 2022)](https://doi.org/10.5061/dryad.4b8gthtg7)
 
 ### S4 – Import rate reported from monitoring
-**R** code for S4 is [not yet available](S4.R).
+**R** code for S4 is [available](S4.R).
+
+It utilises data that have been read from NINA's [survey of stowaways in imported ornamental plants](https://view.nina.no/planteimport/).
 
 ## Pressure (impacts)
 The pressure category contains five indicators, for all of which there is **R** code.
 
 ### P1 – Number of alien species
-**R** code for P1 is [not yet available](P1.R).
+**R** code for P1 is [available](P1.R).
+
+Note that the script can only be run if the following dataset is downloaded first:
+* [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
 
 ### P2 – Extent of terrestrial alien species
 **R** code for P2 is [not yet available](P2.R).
