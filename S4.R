@@ -1,6 +1,11 @@
 
+# This code calculates indicator S4 of NorInAliS
+
+
+
 # Load auxiliary functions
-eval(parse(text=readLines("c:\\art\\neobindc\\function.r")))
+eval(parse(text=readLines("function.r")))
+
 
 # Input the data for 2016 to 2020
 # Source: https://view.nina.no/planteimport/
@@ -23,6 +28,7 @@ Plants <- matrix(
     17, 12, 14, 09, 10),
   2, 5, TRUE,
   list(c("species", "containers"), "yr" %+% 2016:2020))
+
 
 { # Output indicator values
   # Results are standardised for the contents of 10 containers,
