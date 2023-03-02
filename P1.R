@@ -24,14 +24,16 @@ eval(parse(text=readLines("function.r")))
 
 
 # Define an additional auxiliary function
-# This one assign numerical values from 1 to 5 to the five ecological impact catgeories
-as.nr <- function(x) sapply(x, function(z) switch(z, "SE"=5,"HI"=4,"PH"=3,"LO"=2,"NK"=1,NA))
+# This one assign numerical values from 1 to 5
+# to the five ecological impact catgeories
+as.nr <- function(x)
+  sapply(x, function(z) switch(z, "SE"=5,"HI"=4,"PH"=3,"LO"=2,"NK"=1,NA))
 
 
 { # P1(a) is simply the number of reproducing alien species in mainland Norway
   P1a <- length(which(fab$Impact != "NR"))
-  cat("The total number of alien species recorded as reproducing unaidedly in Norway: " %+%
-      P1a %+% "\n\n")
+  cat("The total number of alien species recorded as reproducing unaidedly " %+%
+      "in Norway: " %+% P1a %+% "\n\n")
 }
 
 
@@ -42,7 +44,8 @@ as.nr <- function(x) sapply(x, function(z) switch(z, "SE"=5,"HI"=4,"PH"=3,"LO"=2
 
 
 { # P1(b) is a weighted sum of impact categories
-  # It takes the uncertainty in impact categories into account, quantifiable as quartiles:
+  # It takes the uncertainty in impact categories into account,
+  # quantifiable as quartiles:
   q0 <-       sum(as.nr(fab$minImp))  # minimum and 2.5% confidence level
   q1 <- round(sum(as.nr(fab$Impact) * 0.75 + as.nr(fab$minImp) * 0.25))
   q2 <-       sum(as.nr(fab$Impact))  # best estimate (mean and median)
