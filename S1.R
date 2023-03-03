@@ -20,6 +20,13 @@ if (file.exists("path.csv")) {
   cat("Plase download \"path.csv\" from https://doi.org/10.5061/dryad.4b8gthtg7\n")
 }
 
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ chick this later!
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
+path <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/1823673"),
+                  as.is=T)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
 
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
 fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
