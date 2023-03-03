@@ -40,7 +40,10 @@ Note that the script can only be run if the following dataset is downloaded firs
 * [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
 
 ### P2 – Extent of terrestrial alien species
-**R** code for P2 is [not yet available](P2.R).
+**R** code for P2 is [available](P2.R).
+
+Note that the script can only be run if the following dataset is downloaded first:
+* [Data from: Ecological impact assessments of alien species in Norway (Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc)
 
 ### P3 – Extent of alien freshwater species
 **R** code for P3 is [not yet available](P3.R).
