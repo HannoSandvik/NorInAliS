@@ -1,0 +1,1184 @@
+Name;known;low;best;high
+Abies amabilis;4;20;40;60
+Abies balsamea;64;256;512;768
+Abies cephalonica;12;60;120;180
+Abies concolor;100;500;1000;1500
+Abies grandis;24;120;240;360
+Abies koreana;12;24;60;96
+Abies lasiocarpa;152;608;1216;1824
+Abies magnifica;4;8;20;40
+Abies mariesii;4;4;8;12
+Abies nordmanniana;92;368;736;1104
+Abies procera;96;384;768;1152
+Abies sachalinensis;12;36;60;120
+Abies sibirica;100;400;800;1200
+Abies veitchii;4;8;20;32
+Acartia tonsa;8;16;80;400
+Acer campestre;152;304;456;608
+Acer ginnala;208;416;624;1040
+Acer negundo;8;8;16;32
+Acer pseudoplatanus;8000;16000;32000;48000
+Acer tataricum;28;28;56;84
+Achillea nobilis;20;20;40;60
+Aconogonon alpinum;40;40;80;120
+Aconogonon divaricatum;20;40;100;160
+Aconogonon × fennicum;80;160;240;480
+Aconogonon weyrichii;28;56;140;224
+Acrotona parens;20;2000;20000;200000
+Acrotona pseudotenera;16;3200;8000;16000
+Acrotrichis cognata;80;40000;800;120000
+Acrotrichis henrici;4;80;200;400
+Acrotrichis insularis;188;9400;18800;37600
+Actinidia arguta;4;NA;4;8
+Actinidia kolomikta;4;NA;4;8
+Aesculus hippocastanum;900;2700;4500;6300
+Agaricus bisporus;40;80;400;800
+Agaricus bitorquis;28;56;140;560
+Agaricus subperonatus;15;75;150;225
+Agaricus xanthodermus;80;160;400;800
+Agastache rugosa;8;NA;8;24
+Agastache urticifolia;12;12;24;36
+Aglaothamnion halliae;4000;4000;20000;40000
+Agrostemma githago;4;4;12;20
+Ajuga genevensis;4;8;12;16
+Alcea rosea;8;NA;16;32
+Alchemilla heptagona;12;12;24;36
+Alchemilla mollis;300;1800;3000;4500
+Alchemilla sarmatica;8;40;80;120
+Alchemilla semilunaris;8;8;16;24
+Alchemilla speciosa;8;16;32;48
+Allium angulosum;4;4;8;12
+Allium carinatum;4;4;8;12
+Allium × hollandicum;20;40;80;120
+Allium rotundum;4;4;4;8
+Allium victorialis;72;144;360;576
+Alnus alnobetula;32;64;160;320
+Alphitophagus bifasciatus;20;20;1000;20
+Alyssum alyssoides;60;120;240;360
+Amaranthus hypochondriacus powellii;4;4;8;16
+Amaranthus retroflexus;16;32;80;128
+Ameiurus nebulosus;40;40;80;120
+Amelanchier alnifolia;64;128;320;512
+Amelanchier lamarckii;132;396;792;1188
+Amelanchier spicata;1896;5688;9480;15168
+Amphibalanus improvisus;328;328;4920;13120
+Amsinckia menziesii;60;120;240;360
+Anaphalis margaritacea;328;984;1640;2624
+Anchusa azurea;8;16;32;48
+Androsace elongata;4;4;4;8
+Anemone apennina;4;4;12;20
+Anemone blanda;20;40;80;120
+Anemone canadensis;12;24;48;72
+Anemone scabiosa;4;4;8;12
+Anemone sylvestris;56;112;224;336
+Angiostrongylus vasorum;8;64;2400;4800
+Anguillicoloides crassus;20;400;1600;3500
+Anser indicus;4;4;4;8
+Anthemis cotula;64;NA;128;256
+Anthemis ruthenica;4;NA;4;8
+Anthyllis vulneraria carpatica;120;360;600;1200
+Antithamnion nipponicum;16;48;160;320
+Aphanes arvensis;4;4;8;16
+Aphanomyces astaci;NA;NA;NA;NA
+Aphrastasia pectinatae;40;40;80;120
+Arabidopsis arenosa;3200;9600;16000;25600
+Arabidopsis halleri;4;NA;4;8
+Arabidopsis suecica;700;2100;3500;5600
+Arabis caucasica;300;900;1500;3000
+Aralia elata;4;4;8;16
+Aralia racemosa;12;24;48;72
+Arctium tomentosum;800;4000;8000;16000
+Aremonia agrimonioides;4;NA;4;12
+Argyresthia fundella;44;88;220;880
+Argyresthia trifasciata;48;96;240;960
+Arion rufus;4;2;4;40
+Arion vulgaris;1692;1692;16920;33840
+Aristolochia clematitis;8;8;16;24
+Armoracia rusticana;1040;3120;5200;8320
+Arnica mollis;4;4;4;8
+Aronia melanocarpa;16;80;160;240
+Aronia × prunifolia;140;700;1400;2100
+Artemisia abrotanum;8;16;24;32
+Artemisia pontica;4;4;4;8
+Artemisia sieversiana;4;4;4;8
+Artemisia stelleriana;4;NA;4;8
+Arum maculatum;12;12;24;36
+Aruncus dioicus;2160;6480;10800;17280
+Asarum canadense;4;4;4;8
+Aster alpinus;8;16;40;64
+Aster amellus;8;16;32;48
+Astilbe × arendsii;72;144;360;720
+Astilbe japonica;12;24;60;96
+Astrantia major;160;320;800;1280
+Atomaria lewisi;176;88000;176000;880000
+Atractotomus parvulus;12;120;240;360
+Atriplex hortensis;4;12;20;32
+Atropa belladonna;4;4;8;12
+Auricularia auricula-judae;88;264;440;880
+Aurinia saxatilis;52;104;208;312
+Baeocrara japonica;12;240;1200;2400
+Ballota nigra nigra;8;8;16;24
+Bambara contorta;8;240;400;800
+Barbarea vulgaris;11760;23520;35280;47040
+Beckmannia syzigachne;8;24;40;80
+Berberis aggregata;16;32;80;128
+Berberis darwinii;4;20;40;60
+Berberis thunbergii;1696;3392;8480;13568
+Bergenia cordifolia;268;536;1072;1608
+Bergenia crassifolia;172;516;860;1376
+Berteroa incana;2000;3000;4000;6000
+Betonica macrantha;300;600;900;1500
+Betonica officinalis;20;30;40;60
+Bisnius parcus;12;6000;12000;18000
+Bistorta affinis;16;32;64;96
+Bistorta officinalis;300;600;900;1500
+Bithynia tentaculata;8;8;16;24
+Blumeriella jaapii;500;750;1000;1250
+Boettgerilla pallens;76;760;3800;7600
+Bohemiellina flavipennis;4;2000;4000;8000
+Boletellus projectellus;4;4;8;20
+Bonnemaisonia hamifera;780;3900;7800;15600
+Botrylloides violaceus;120;120;240;720
+Branta canadensis;24000;24000;48000;48000
+Brassica elongata;4;4;8;16
+Braula coeca;4;16;200;400
+Bromopsis erecta;24;48;72;120
+Bromopsis inermis;3304;4956;9912;13216
+Bromopsis pubescens;8;8;16;24
+Brunnera macrophylla;52;104;156;260
+Bryonia alba;400;800;1200;2000
+Buddleja davidii;16;48;80;160
+Bunias orientalis;2644;7932;13220;26440
+Caenoscelis subdeplanata;100;1000;10000;100000
+Calendula arvensis;4;NA;8;16
+Calyptomerus dubius;4;40;200;800
+Calystegia pulchra;92;460;920;1380
+Calystegia sepium spectabilis;300;900;1800;3000
+Camelina microcarpa;4;NA;4;12
+Camelostrongylus mentulatus;24;24;48;240
+Cameraria ohridella;32;32;32;32
+Campanula carpatica;8;24;40;64
+Campanula glomerata glomerata;52;78;104;130
+Campanula glomerata 'Superba';1600;4800;8000;12800
+Campanula latifolia macrantha;68;204;340;544
+Campanula patula;700;1400;3500;5600
+Campanula rapunculoides;3888;7776;15552;23328
+Campylopus introflexus;200;400;600;1200
+Cantharis cryptica;12;60;120;600
+Capnoides sempervirens;4;NA;4;12
+Caprella mutica;256;128;512;1024
+Caragana arborescens;420;2100;4200;6300
+Caragana frutex;4;4;12;20
+Carassius auratus;36;72;180;360
+Carcinops pumilio;32;3200;6400;16000
+Carduus acanthoides;20;30;40;60
+Carduus nutans leiophyllus;4;4;8;16
+Carduus nutans nutans;4;NA;4;8
+Carex pendula;8;8;16;24
+Carex praecox;4;4;4;8
+Carex strigosa;4;4;4;8
+Carpelimus zealandicus;4;20;40;400
+Carpinus betulus;124;496;1240;1860
+Carpophilus hemipterus;4;20;40;80
+Carpophilus marginellus;12;600;1200;6000
+Cartodere bifasciata;12;120;600;1200
+Cartodere constricta;160;8000;16000;32000
+Cartodere nodifer;180;36000;90000;180000
+Castanea sativa;4;4;12;20
+Celastrus orbiculatus;4;4;4;8
+Centaurea nemoralis;4;4;8;16
+Centaurea stoebe;8;8;16;24
+Cepaea nemoralis;92;92;460;920
+Cephalaria gigantea;4;12;20;32
+Cerastium tomentosum;1200;3600;6000;9600
+Ceratochloa cathartica;4;8;20;32
+Ceratochloa sitchensis;4;8;20;32
+Cercidiphyllum japonicum;12;36;60;96
+Chaenomeles japonica;92;460;920;1380
+Chaenomeles speciosa;12;12;24;36
+Chaenorhinum minus;1600;4800;8000;12800
+Chaerophyllum aromaticum;4;4;4;8
+Chaerophyllum bulbosum;4;4;8;12
+Chaerophyllum hirsutum;4;4;4;8
+Chaerophyllum temulum;4;8;12;16
+Chamaecyparis lawsoniana;84;168;420;840
+Chamaecyparis pisifera;8;40;80;120
+Chamaecytisus glaber;4;4;8;12
+Chamaecytisus × versicolor;4;8;16;24
+Chamaespartium sagittale;4;4;8;12
+Chamerion latifolium;4;8;16;24
+Chelone glabra;8;8;16;24
+Chelone obliqua;24;48;120;192
+Chen caerulescens;36;36;36;72
+Chenopodiastrum hybridum;4;12;20;32
+Chenopodiastrum murale;4;4;8;12
+Chenopodium ficifolium;16;16;32;64
+Chenopodium foliosum;4;4;12;20
+Chenopodium missouriense;16;32;64;96
+Chionoecetes opilio;20000;20000;30000;40000
+Chlorophyllum brunneum;4;8;40;200
+Chromaphis juglandicola;4;4;8;12
+Ciboria rufofusca;24;48;240;720
+Cicerbita macrophylla;304;912;1824;2736
+Cicerbita plumieri;40;120;240;400
+Claytonia perfoliata;20;60;100;200
+Claytonia sibirica;144;288;720;1152
+Clematis alpina;56;112;168;280
+Clematis tangutica;28;56;112;168
+Clematis vitalba;12;36;60;96
+Clematis viticella;8;16;24;32
+Codium fragile;644;644;1288;1932
+Coincya monensis cheiranthos;4;4;8;12
+Colchicum autumnale;28;84;140;224
+Coleosporium tussilaginis;9600;38400;48000;57600
+Colletotrichum trichellum;20;40;50;60
+Colpomenia peregrina;264;19800;26400;33000
+Conium maculatum;76;114;152;190
+Contarinia pisi;80;320;640;1280
+Contarinia pyrivora;40;20;40;400
+Conyza bonariensis;4;4;4;8
+Conyza canadensis;1188;1782;3564;5940
+Coproporus immigrans;12;120;600;1200
+Cordylophora caspia;6;18;36;60
+Coreopsis grandiflora;4;8;16;24
+Cornu aspersum;4;4;200;400
+Corticarina curta;4;40;100;200
+Corydalis angustifolia;4;4;4;8
+Corydalis nobilis;4;4;12;20
+Corydalis ophiocarpa;8;8;16;32
+Corydalis solida;368;1104;1840;2944
+Corylus maxima;8;16;40;64
+Cotoneaster acutifolius;8;24;80;120
+Cotoneaster adpressus;8;24;40;80
+Cotoneaster ascendens;24;72;120;240
+Cotoneaster atropurpureus;4;12;20;40
+Cotoneaster bullatus;1000;3000;5000;10000
+Cotoneaster cashmiriensis;4;4;8;16
+Cotoneaster dammeri;64;192;320;512
+Cotoneaster dielsianus;916;1832;3664;5496
+Cotoneaster divaricatus;1332;6660;13320;19980
+Cotoneaster foveolatus;28;280;560;840
+Cotoneaster hissaricus;4;4;12;20
+Cotoneaster horizontalis;468;1404;2340;4680
+Cotoneaster ignescens;4;4;20;40
+Cotoneaster laetevirens;28;84;140;280
+Cotoneaster latifolius;4;4;20;40
+Cotoneaster lucidus;1524;4572;7620;15240
+Cotoneaster moupinensis;84;252;420;840
+Cotoneaster multiflorus;60;180;300;480
+Cotoneaster nanshan;8;16;40;64
+Cotoneaster nebrodensis;56;112;224;336
+Cotoneaster rotundifolius;4;4;8;20
+Cotoneaster salicifolius;12;36;60;96
+Cotoneaster symondsii;184;552;920;1472
+Cotoneaster villosulus;108;324;540;864
+Cotula coronopifolia;8;8;16;32
+Crangonyx pseudogracilis;4;4;8;40
+Crassostrea gigas;828;828;828;3312
+Crataegus flabellata;8;8;40;80
+Crataegus laevigata;364;1092;2184;3640
+Crataegus macracantha;12;12;36;60
+Crataegus sanguinea;132;396;660;1320
+Crepidula fornicata;28;140;280;420
+Crepis biennis;260;780;1300;2080
+Crepis capillaris;12;12;36;60
+Crocus chrysanthus;8;40;80;160
+Crocus flavus;60;180;600;900
+Crocus × stellaris;12;60;96;144
+Crocus tommasinianus;36;72;180;288
+Crocus vernus;460;2300;4600;6900
+Cronartium ribicola;200;300;500;800
+Cruciata laevipes;4;4;8;12
+Cryptocline taxicola;20;20;100;200
+Cryptomeria japonica;8;16;32;48
+Cryptophagus acutangulus;56;2800;11200;28000
+Cryptophagus cellaris;8;80;400;800
+Cryptophagus subfumatus;20;400;1000;2000
+Cryptophilus propinquus;4;40;100;400
+Cryptopleurum subtile;32;3200;16000;32000
+Cryptops parisi;28;140;280;2800
+Culex pipiens;8;8;12;16
+Cupressus nootkatensis;32;160;320;480
+Cyanus cheiranthifolius;4;8;16;24
+Cyanus montanus;1800;3600;9000;14400
+Cyanus triumfettii;8;16;40;64
+Cyclospermum leptophyllum;4;4;8;12
+Cymbalaria muralis;800;2400;4000;8000
+Cyprinus carpio;272;272;400;770
+Cytisus × praecox;4;8;20;32
+Cytisus scoparius;2000;4000;10000;16000
+Dalotia coriaria;40;8000;20000;40000
+Dama dama;40;40;48;60
+Daphnia ambigua;4;4;40;400
+Dasineura mali;0;NA;0;NA
+Dasineura pyri;80;160;320;800
+Dasiphora fruticosa;300;600;900;1500
+Dasya baillouviana;300;300;600;900
+Dasysiphonia japonica;600;600;1200;2400
+Datura stramonium;12;36;60;84
+Daucus carota carota;648;1944;3240;4536
+Delphinella abietis;176;176;352;528
+Delphinium elatum;160;640;1280;1920
+Deraeocoris lutescens;68;136;204;272
+Deroceras panormitanum;28;28;28;2800
+Descolea antarctica;4;8;8;12
+Diadumene lineata;4;4;40;80
+Dianthus barbatus;250;750;1250;1750
+Dianthus caryophyllus;32;64;128;192
+Dianthus glacialis;4;4;4;8
+Dianthus plumarius;70;210;350;490
+Dicentra formosa;300;600;900;1500
+Didymascella thujina;40;40;80;200
+Diervilla florida;4;4;8;16
+Digitalis grandiflora;8;8;24;40
+Digitalis lanata;4;4;8;12
+Digitalis lutea;20;40;60;100
+Digitaria sanguinalis;8;16;32;48
+Diplotaxis muralis;250;750;1250;1750
+Diplotaxis tenuifolia;100;300;500;700
+Dipsacus fullonum;50;150;300;500
+Dipsacus strigosus;12;24;36;60
+Doronicum columnae;240;720;1200;1680
+Doronicum × excelsum;48;96;192;288
+Doronicum macrophyllum;36;108;180;252
+Doronicum pardalianches;40;80;160;240
+Doronicum plantagineum;4;4;8;20
+Dorytomus filirostris;4;4;40;4
+Draba aizoides;8;8;16;24
+Draba nemorosa;250;750;1250;2500
+Dracocephalum parviflorum;4;4;8;16
+Dracocephalum thymiflorum;16;32;64;96
+Drosophila busckii;8;480;800;2000
+Drosophila hydei;40;2400;4000;48000
+Drosophila immigrans;4;4;100;400
+Drosophila melanogaster;36;36;1800;5400
+Duchesnea indica;8;8;16;24
+Echinochloa crus-galli;644;1932;3864;6440
+Echinops bannaticus;20;40;60;100
+Echinops exaltatus;120;240;480;720
+Echinops sphaerocephalus;112;336;672;1120
+Elaeagnus commutata;128;640;1280;1920
+Elodea canadensis;588;1176;2352;3528
+Elodea nuttallii;12;24;60;96
+Elytrigia elongata;4;4;4;8
+Ensis directus;28;28;84;112
+Epilobium brunnescens;4;4;4;8
+Epilobium ciliatum ciliatum;9616;28848;48080;96160
+Epilobium ciliatum glandulosum;1376;4128;6880;13760
+Epilobium hirsutum;260;780;1300;2600
+Epilobium tetragonum;8;8;16;32
+Epimedium alpinum;12;24;48;72
+Epinotia fraternana;60;120;300;1200
+Epinotia nigricana;16;32;80;320
+Epinotia subsequana;12;24;60;240
+Eranthis hyemalis;68;340;1020;1700
+Eratigena atrica;300;300;1500;3000
+Erica herbacea;4;4;8;20
+Erigeron annuus;48;144;240;480
+Eriosoma lanigerum;25;25;250;2500
+Erucastrum gallicum;44;66;88;132
+Eryngium alpinum;4;4;4;8
+Eryngium giganteum;24;48;72;120
+Eryngium planum;8;16;32;48
+Erysimum altum;76;760;1520;2280
+Erysiphe alphitoides;416;832;3328;6240
+Erysiphe divaricata;200;300;400;500
+Erysiphe flexuosa;28;56;140;280
+Erysiphe friesii;20;20;40;80
+Erysiphe hypophylla;28;28;280;420
+Erysiphe palczewskii;12;24;60;120
+Erysiphe syringae-japonicae;40;40;80;120
+Erysiphe vanbruntiana;40;80;100;120
+Erysiphe viburnicola;100;150;200;250
+Erythronium dens-canis;8;16;24;40
+Erythronium grandiflorum;4;4;8;12
+Euonymus europaeus;120;240;480;720
+Euonymus latifolius;12;12;36;60
+Euonymus nanus;20;60;100;160
+Euonymus sachalinensis;4;8;16;24
+Euphorbia amygdaloides;4;8;12;16
+Euphorbia chamaesyce;8;8;24;48
+Euphorbia cyparissias;800;2400;4000;6400
+Euphorbia dulcis;12;24;36;48
+Euphorbia epithymoides;24;72;120;192
+Euphorbia esula;600;1200;2400;3600
+Euphorbia lathyris;4;8;20;32
+Fallopia baldschuanica;32;96;160;256
+Festuca amethystina;28;84;140;280
+Festuca gautieri;4;4;8;12
+Festuca heterophylla;4;4;4;8
+Festuca rubra commutata;156;1560;4680;7800
+Festuca rubra megastachya;64;640;1920;3200
+Filipendula camtschatica;76;228;380;760
+Filipendula purpurea;8;16;24;40
+Filipendula rubra;4;4;8;16
+Forsythia × intermedia;40;80;120;200
+Fourraea alpina;12;12;24;48
+Fragaria × ananassa;160;480;800;1120
+Fragaria chiloënsis;16;48;80;112
+Fragaria moschata;800;2400;4000;8000
+Fragaria virginiana;24;72;120;168
+Fritillaria camschatcensis;4;4;4;8
+Fritillaria meleagris;50;100;150;250
+Gabronthus sulcifrons;4;16;40;200
+Gabronthus thermarum;16;800;1600;3200
+Gagea minima;100;300;500;700
+Gagea pratensis;8;8;16;24
+Gaillardia × grandiflora;8;16;24;40
+Galanthus nivalis;750;2250;3750;5250
+Galanthus × valentinei;48;96;240;384
+Galatella sedifolia;4;4;8;12
+Galega × hartlandii;4;4;12;20
+Galega officinalis;8;8;8;16
+Galega orientalis;20;40;60;100
+Galeopsis pubescens;4;4;8;12
+Galinsoga parviflora;100;300;500;1000
+Galinsoga quadriradiata;450;1350;2250;4500
+Galium mollugo;4;12;32;60
+Galium pumilum;4;4;20;40
+Gamochaeta purpurea;4;4;8;12
+Gasterophilus intestinalis;25;125;250;1250
+Genista tinctoria;12;24;36;48
+Geranium endressii;16;32;48;80
+Geranium macrorrhizum;64;192;320;448
+Geranium nodosum;4;8;12;16
+Geranium palustre;16;32;64;96
+Geranium phaeum;48;144;240;336
+Geranium pylzowianum;4;4;4;8
+Geranium pyrenaicum;400;1200;2400;4000
+Geranium sibiricum;36;108;180;252
+Geum aleppicum;28;56;112;168
+Geum macrophyllum;380;1140;1900;2660
+Geum quellyon;30;90;150;210
+Gladiolus imbricatus;4;4;8;12
+Globodera pallida;30;36;39;45
+Globodera rostochiensis;800;800;1040;1200
+Glomerella acutata;400;400;800;1200
+Glyceria grandis;74;222;370;518
+Glyceria maxima;500;1500;2500;3500
+Gobio gobio;120;120;180;360
+Godronia multispora;8;8;40;80
+Gomphidius maculatus;4;8;40;80
+Goniadella gracilis;8;40;160;400
+Gonionemus vertens;4;40;200;400
+Gracilaria vermiculophylla;192;960;1920;3840
+Graphocephala fennahi;28;28;56;84
+Guignardia aesculi;80;80;160;240
+Gymnopilus luteofolius;12;1200;2400;3600
+Gypsophila muralis;56;112;168;280
+Gypsophila paniculata;8;8;24;40
+Gyrodactylus salaris;250;250;250;250
+Haematobosca stimulans;4;40;100;400
+Halerpestes cymbalaria;264;528;1320;2112
+Harmonia axyridis;128;128;2560;128
+Harpalus signaticornis;4;16;200;400
+Hedera hibernica;8;16;40;64
+Helianthus × laetiflorus;180;360;900;1440
+Helianthus tuberosus;176;352;704;1056
+Helicella itala;4;4;4;4
+Helix pomatia;148;74;148;740
+Hemerocallis fulva;100;200;500;800
+Hemerocallis lilioasphodelus;184;552;920;1472
+Henoticus californicus;16;320;800;1600
+Heracleum mantegazzianum;2700;8100;13500;27000
+Heracleum persicum;3212;9636;16060;25696
+Heracleum pubescens;32;160;320;480
+Herniaria glabra;352;704;1056;1760
+Hesperis matronalis;3000;9000;15000;24000
+Heterogaster urticae;4;32;160;320
+Heterothops stiglundbergi;16;1600;8000;16000
+Heuchera sanguinea;40;120;200;320
+Hibiscus trionum;4;4;4;8
+Hirschfeldia incana;16;16;48;80
+Holodiscus discolor;20;60;100;160
+Homarus americanus;136;136;136;408
+Hordeum jubatum;400;800;2000;3200
+Hosta lancifolia;32;64;128;192
+Hosta sieboldiana;40;120;200;320
+Hosta ventricosa;16;48;80;128
+Hyacinthoides hispanica;80;160;320;480
+Hyacinthoides italica;4;4;12;20
+Hyacinthoides × massartiana;48;144;480;960
+Hyacinthoides non-scripta;344;1032;1720;3440
+Hydrangea arborescens;4;8;16;24
+Hydrangea petiolaris;16;32;80;112
+Hydrotaea aenescens;4;4;20;80
+Hylotelephium anacampseros;44;132;220;352
+Hylotelephium ewersii;224;672;1120;1792
+Hylotelephium telephium;200;600;1200;2000
+Hymenoscyphus fraxineus;900;900;4500;7200
+Hypoponera punctatissima;32;640;1600;6400
+Iberis amara;16;16;32;48
+Iberis sempervirens;32;96;160;256
+Iberis umbellata;8;8;16;24
+Ilex × meserveae;4;4;8;12
+Illinoia lambersi;4;16;20;40
+Impatiens glandulifera;4968;9936;14904;19872
+Impatiens parviflora;400;2000;4000;6000
+Inula helenium;40;80;120;200
+Iris delavayi;12;36;60;96
+Iris × germanica;40;120;200;320
+Iris latifolia;4;8;20;32
+Iris sanguinea;28;84;168;280
+Iris sibirica;272;544;1088;1632
+Iris variegata;4;8;20;32
+Ischyrocerus commensalis;40;800;2000;4000
+Jacobaea alpina;84;168;420;840
+Jacobaea erucifolia;4;4;8;8
+Janetiella siskiyou;4;16;80;200
+Juglans cinerea;4;4;8;16
+Juglans regia;4;12;20;32
+Juncus ensifolius;16;32;80;128
+Juncus tenuis;1200;3600;12000;18000
+Juniperus chinensis;8;16;32;48
+Kabatiella caulivora;50;5000;25000;50000
+Kalmia angustifolia;4;4;8;12
+Kolkwitzia amabilis;36;36;108;180
+Kryphioiulus occultus;4;4;40;200
+Kybos abstrusus;36;72;144;216
+Laburnum alpinum;448;1344;2688;4480
+Laburnum anagyroides;468;1404;2340;4680
+Laburnum × watereri;120;360;600;1200
+Lachnellula occidentalis;160;160;320;640
+Lachnellula willkommii;192;192;288;384
+Lactarius circellatus;8;8;16;80
+Lactuca serriola;700;2100;3500;5600
+Lamiastrum galeobdolon argentatum;28;56;140;224
+Lamiastrum galeobdolon galeobdolon;472;1416;2360;3776
+Lamium maculatum;60;300;600;900
+Lamprocapnos spectabilis;80;240;400;800
+Larix kaempferi;112;560;1120;1680
+Larix × marschlinsii;112;560;1120;1680
+Larix sibirica;144;720;1440;2160
+Lathyrus latifolius;32;160;320;480
+Lathyrus tuberosus;36;72;144;216
+Lavandula angustifolia;4;4;12;20
+Leistus fulvibarbis;4;16;40;400
+Leontodon saxatilis;4;4;4;8
+Leontopodium nivale alpinum;4;4;4;8
+Leonurus cardiaca;8;8;32;64
+Leonurus quinquelobatus;40;40;40;80
+Lepidium campestre;400;800;1200;2000
+Lepidium coronopus;4;4;12;20
+Lepidium densiflorum;152;304;608;912
+Lepidium didymum;72;144;360;576
+Lepidium draba;188;282;376;564
+Lepidium heterophyllum;284;426;852;1420
+Lepidium latifolium;292;584;876;1460
+Lepidium ruderale;800;1600;4000;6400
+Lepidosaphes newsteadi;4;4;20;40
+Lepidotheca suaveolens;15588;46764;77940;124704
+Lepomis gibbosus;24;24;48;72
+Lepus europaeus;100;100;200;300
+Leratiomyces ceres;8;16;80;400
+Leratiomyces percevalii;10;20;100;250
+Leucanthemum maximum;40;80;200;320
+Leucanthemum × superbum;40;80;280;480
+Leucaspius delineatus;12;12;18;36
+Leucojum vernum;64;192;320;640
+Ligularia dentata;28;56;84;140
+Ligularia przewalskii;24;48;72;120
+Ligularia sibirica;12;24;36;60
+Ligularia stenocephala;20;40;80;120
+Ligustrum lucidum;16;48;80;128
+Ligustrum ovalifolium;24;72;120;192
+Lilioceris lilii;128;6400;12800;25600
+Lilium × hollandicum;12;24;48;72
+Lilium lancifolium;16;16;48;80
+Limax maximus;528;528;2640;5280
+Linaria repens;800;1200;2400;3600
+Linum perenne;60;180;300;480
+Lipandra polysperma;1280;2560;5120;7680
+Lithocharis nigriceps;112;112;5600;112
+Lobularia maritima;20;40;80;120
+Lolium multiflorum;600;900;1800;3000
+Lonicera acuminata;4;4;8;12
+Lonicera alpigena;12;24;60;96
+Lonicera caerulea;796;3980;7960;11940
+Lonicera caprifolium;356;1068;1780;3560
+Lonicera involucrata;184;552;920;1288
+Lonicera japonica;4;8;12;16
+Lonicera korolkowii;8;16;24;32
+Lonicera ligustrina yunnanensis;8;16;24;32
+Lonicera morrowii;8;16;24;32
+Lonicera nigra;16;32;48;64
+Lonicera sempervirens;8;8;16;24
+Lonicera tatarica;400;1200;2000;2800
+Lotus glaber;8;8;8;24
+Lotus pedunculatus;80;160;320;480
+Lotus sativus;732;2196;3660;7320
+Lotus subbiflorus;4;4;4;8
+Lunaria annua;200;300;600;1000
+Lunularia cruciata;0;NA;0;NA
+Lupinus nootkatensis;600;1800;3000;4800
+Lupinus perennis;144;432;720;1440
+Lupinus polyphyllus;26000;52000;78000;104000
+Luzula forsteri;4;4;8;12
+Luzula luzuloides;644;1288;2576;3864
+Luzula nivea;8;8;24;40
+Lychnis chalcedonica;92;184;460;920
+Lychnis coronaria;26;52;130;208
+Lycium barbarum;52;78;156;260
+Lyctocoris campestris;28;56;84;112
+Lysichiton americanus;60;180;300;480
+Lysimachia ciliata;12;24;36;60
+Lysimachia nummularia;2200;4400;8800;13200
+Lysimachia punctata;3400;10200;17000;34000
+Macropsis graminea;20;20;40;60
+Macrosiphum euphorbiae;200;200;400;600
+Mahonia aquifolium;400;1200;2000;4000
+Maianthemum racemosum;8;24;40;56
+Maianthemum stellatum;4;4;4;4
+Malus baccata;8;16;24;40
+Malus dasyphylla;12;24;36;60
+Malus prunifolia;4;4;8;12
+Malus toringo;56;112;280;560
+Malva alcea;40;120;200;280
+Malva moschata;2800;14000;19600;28000
+Malva pusilla;140;420;700;980
+Malva verticillata;8;8;16;16
+Marenzelleria viridis;12;60;120;480
+Mauranthemum paludosum;8;8;24;40
+Medicago falcata;100;200;500;800
+Medicago sativa;800;2400;4000;8000
+Medicago × varia;40;120;200;280
+Melampsoridium hiratsukanum;900;900;4500;900
+Melampyrum nemorosum;56;112;168;280
+Melanothamnus harveyi;80;80;160;240
+Melica altissima;8;16;24;40
+Melica ciliata;4;4;4;8
+Melilotus albus;3800;11400;19000;38000
+Melilotus altissimus;400;800;1600;2400
+Melilotus officinalis;1200;2400;4800;7200
+Meloidogyne hapla;10;10;13;16
+Meloidogyne naasi;20;20;120;300
+Mentha × gentilis;20;40;80;120
+Mentha longifolia;24;48;96;144
+Mentha × piperita;80;160;320;480
+Mentha × rotundifolia;32;64;128;192
+Mentha × smithiana;8;16;32;48
+Mentha spicata;88;176;352;528
+Mentha suaveolens;16;32;64;96
+Mentha × villosa;20;40;80;120
+Mentha × villosonervata;12;24;48;72
+Mercurialis annua;40;80;120;200
+Meria laricis;52;52;104;156
+Micromys minutus;16;16;80;320
+Mimulus guttatus;120;360;600;1200
+Mimulus luteus;88;176;352;528
+Mitostoma chrysomelas;32;32;64;160
+Mnemiopsis leidyi;35000;35000;70000;105000
+Molgula manhattensis;72;72;288;720
+Monarthropalpus flavus;4;4;200;800
+Moraria sphagnicola;4;4;400;4000
+Muscari armeniacum;140;420;700;1120
+Muscari botryoides;600;1800;3000;4800
+Muscari latifolium;4;8;20;32
+Mutinus ravenelii;270;270;810;1350
+Myosotis alpestris;8;8;8;24
+Myosotis sparsiflora;12;12;24;36
+Myosotis sylvatica;1600;4800;9600;14400
+Myrmecocephalus concinnus;12;12;240;12
+Myrrhis odorata;1000;3000;5000;10000
+Myzus ascalonicus;20;40;60;80
+Narcissus × cyclazetta;64;128;192;320
+Narcissus × incomparabilis;76;228;380;532
+Nasturtium officinale;8;8;16;24
+Nematodirus battus;1940;3880;5820;19400
+Nematostoma parasiticum;8;16;400;4000
+Neovison vison;4864;194560;243200;316160
+Nepeta cataria;12;24;36;48
+Nepeta racemosa;36;72;108;180
+Nepeta sibirica;16;48;80;112
+Nicandra physalodes;4;4;12;24
+Noccaea caerulescens;7500;22500;37500;75000
+Nonea versicolor;52;104;156;260
+Odontites vulgaris;1000;2000;3000;4000
+Oenothera ammophila;24;24;72;120
+Oenothera biennis;500;1000;2500;4000
+Oenothera canovirens;8;8;16;24
+Oenothera depressa;12;12;24;36
+Oenothera glazioviana;50;50;100;150
+Oenothera muricata;250;500;1000;1500
+Oenothera perangusta;4;4;8;12
+Oligota parva;20;200;400;1000
+Omalium rugatum;164;164;16400;164
+Omonadus floralis;100;5000;10000;50000
+Omphalodes verna;160;480;960;1440
+Onchocleidus sp.;4;4;8;80
+Onchocleidus dispar;4;4;8;80
+Oncorhynchus gorbuscha;788;1174;1332;1450
+Oncorhynchus mykiss;1132;1687;1913;2083
+Ondatra zibethicus;112;112;224;560
+Ononis spinosa spinosa;8;8;16;24
+Ophiostoma novo-ulmi;3000;3000;3900;4500
+Ophiostoma ulmi;24;12;18;24
+Opilio canestrinii;124;124;248;620
+Ornithogalum nutans;12;24;48;72
+Ornithogalum umbellatum;256;512;768;1024
+Ornithopus compressus;4;4;4;8
+Orobanche elatior;4;4;4;8
+Orobanche hederae;4;8;8;12
+Orobanche lucorum;4;4;8;8
+Oryctes nasicornis;120;600;1200;2400
+Oryctolagus cuniculus;120;120;120;120
+Ostearius melanopygius;24;24;120;240
+Othocallis siberica;800;2400;4000;6400
+Otiorhynchus armadillo;8;8;400;8
+Ovibos moschatus;40;40;60;80
+Oxalis adenophylla;4;8;16;24
+Oxalis corniculata;12;24;48;72
+Oxalis dillenii;40;80;200;320
+Oxalis stricta;500;1000;2000;3000
+Oxybasis rubra;16;16;64;112
+Oxychilus draparnaudi;92;92;460;920
+Oxytelus migrator;4;80;200;400
+Pachyrhinus lethierryi;12;120;240;600
+Pacifastacus leniusculus;44;88;88;132
+Panaphis juglandis;4;4;8;12
+Papaver atlanticum;24;48;96;144
+Papaver bracteatum;48;48;144;240
+Papaver cambricum;400;1200;2400;3600
+Papaver croceum;1000;3000;5000;8000
+Papaver dubium dubium;52;104;208;312
+Papaver rhoeas;12;12;36;60
+Papaver setiferum;80;240;400;640
+Paralithodes camtschaticus;3936;59040;98400;137760
+Parasenecio hastatus;4;4;8;16
+Parietaria judaica;8;8;16;24
+Parietaria pensylvanica;8;16;32;48
+Parthenocissus inserta;400;800;2000;3200
+Parthenocissus quinquefolia;60;120;240;360
+Parthenolecanium pomeranicum;4;12;24;32
+Pastinaca sativa hortensis;1200;2400;4800;7200
+Pastinaca sativa sativa;40;80;160;240
+Pelophylax esculentus;32;32;32;32
+Pelophylax lessonae lessonae;24;24;24;24
+Penilia avirostris;4;8000;14000;20000
+Pentaglottis sempervirens;28;56;112;168
+Perigona nigriceps;20;400;1000;4000
+Persicaria wallichii;20;20;60;100
+Petasites hybridus;600;1200;3600;6000
+Petasites japonicus giganteus;344;1032;1720;2752
+Petricolaria pholadiformis;4;20;40;80
+Petroselinum crispum;8;16;32;48
+Phacelia tanacetifolia;8;8;16;16
+Phaeocryptopus gaeumannii;12;12;60;120
+Phaeolepiota aurea;620;1240;2480;4960
+Phalaris arundinacea picta;200;400;1000;1600
+Phasianus colchicus;3000;3000;3000;6000
+Phedimus aizoon;100;200;500;800
+Phedimus crenatus;24;72;240;480
+Phedimus hybridus;400;2000;4000;6000
+Phedimus kamtschaticus;28;140;280;420
+Phedimus spurius;1600;8000;16000;24000
+Philadelphus coronarius;156;312;624;936
+Philadelphus lewisii;4;8;20;32
+Philadelphus pubescens;16;32;80;128
+Philonthus rectangulus;60;60;3000;60
+Phlox paniculata;40;80;160;240
+Phlox subulata;60;120;240;360
+Phomopsis juniperivora;80;80;160;240
+Phyllobius intrusus;16;160;800;1600
+Phyllodrepa puberula;80;4000;8000;16000
+Physalis alkekengi;40;80;160;240
+Physocarpus opulifolius;80;160;320;480
+Physostegia virginiana;4;4;8;12
+Phyteuma nigrum;4;4;4;12
+Phyteuma spicatum caeruleum;4;4;4;8
+Phytophthora alni;NA;NA;NA;NA
+Phytophthora cambivora;NA;NA;NA;NA
+Phytophthora cinnamomi;NA;NA;NA;NA
+Phytophthora cryptogea;NA;NA;NA;NA
+Phytophthora fragariae;NA;NA;NA;NA
+Phytophthora gonapodyides;NA;NA;NA;NA
+Phytophthora gregata;NA;NA;NA;NA
+Phytophthora lacustris;NA;NA;NA;NA
+Phytophthora megasperma;NA;NA;NA;NA
+Phytophthora pini;NA;NA;NA;NA
+Phytophthora plurivora;NA;NA;NA;NA
+Phytophthora pseudosyringae;NA;NA;NA;NA
+Phytophthora ramorum;NA;NA;NA;NA
+Phytophthora rubi;NA;NA;NA;NA
+Phytophthora syringae;NA;NA;NA;NA
+Picea engelmannii;56;280;560;840
+Picea glauca;76;380;760;1140
+Picea × lutzii;2400;12000;24000;36000
+Picea mariana;4;20;40;60
+Picea omorika;24;48;120;192
+Picea orientalis;8;8;8;24
+Picea pungens;12;120;240;360
+Picea sitchensis;2400;12000;24000;36000
+Picris hieracioides villarsii;48;144;240;384
+Pieris japonica;8;16;24;32
+Piezodorus lituratus;28;56;112;168
+Pilosella aurantiaca aurantiaca;1400;2800;5600;8400
+Pilosella caespitosa;80;400;800;1200
+Pilosella piloselloides bauhinii;116;348;1160;2320
+Pilosella piloselloides praealta;32;160;320;640
+Pimpinella major;52;104;260;416
+Pinus cembra;220;1100;2200;3300
+Pinus contorta;300;1200;2400;3600
+Pinus mugo;900;4500;9000;13500
+Pinus nigra;32;160;320;480
+Pinus peuce;16;80;160;240
+Pinus sibirica;220;1100;2200;3300
+Pinus strobus;40;120;200;400
+Pinus uncinata;900;4500;9000;13500
+Planorbarius corneus;28;28;56;84
+Planorbis carinatus;12;12;24;36
+Plantago virginica;4;4;4;8
+Poa chaixii;184;368;552;736
+Poa supina;160;480;960;1600
+Podosphaera mors-uvae;300;330;360;390
+Podosphaera spiraeae;100;200;300;350
+Polemonium reptans;4;4;12;20
+Polydrusus formosus;52;1040;2600;5200
+Polygonum aviculare rurivagum;12;48;120;240
+Polypogon monspeliensis;4;8;12;20
+Populicerus nitidissimus;60;60;120;180
+Populus alba;100;200;300;400
+Populus balsamifera;800;4000;8000;12000
+Populus × berolinensis;180;540;900;1440
+Populus × canadensis;32;160;320;480
+Populus × canescens;32;64;160;256
+Populus deltoides;8;24;48;80
+Populus laurifolia;72;144;360;576
+Populus nigra;12;24;60;96
+Populus simonii;8;16;40;64
+Populus trichocarpa;52;104;260;416
+Populus tristis;12;24;60;96
+Porotachys bisulcatus;16;320;800;1600
+Portulaca oleracea oleracea;4;8;20;32
+Potamopyrgus antipodarum;192;1920;3840;9600
+Potentilla anglica;8;8;16;24
+Potentilla atrosanguinea;4;4;8;12
+Potentilla inclinata;8;8;16;24
+Potentilla intermedia;1100;3300;5500;7700
+Potentilla recta;200;400;1000;1600
+Potentilla reptans;280;560;1120;1680
+Potentilla thuringiaca;2300;6900;11500;23000
+Prenanthes purpurea;8;8;24;40
+Primula auricula;8;16;32;48
+Primula denticulata;36;72;144;216
+Primula elatior elatior;2000;6000;12000;20000
+Primula elatior pallasii;8;16;32;48
+Primula juliae;24;48;120;192
+Proasellus coxalis;12;12;144;1200
+Prunus cerasifera;240;720;1200;1920
+Prunus domestica insititia;164;328;820;1312
+Prunus laurocerasus;44;132;264;396
+Prunus maackii;4;4;8;12
+Prunus mahaleb;24;48;96;144
+Prunus serotina;40;200;600;1000
+Prunus virginiana;12;24;48;72
+Psephellus dealbatus;24;24;48;72
+Pseudodactylogyrus anguillae;8;8;16;32
+Pseudodactylogyrus bini;4;4;8;16
+Pseudofumaria lutea;400;1200;2400;4000
+Pseudotsuga menziesii;200;800;1600;2400
+Psilocybe cyanescens;4;4;20;100
+Psylla buxi;20;40;60;100
+Ptinella johnsoni;8;800;4000;8000
+Pulmonaria affinis;56;112;280;448
+Pulmonaria mollis;212;636;1060;1696
+Pulmonaria officinalis;40;120;200;320
+Pulmonaria rubra;400;1200;2000;3200
+Pulmonaria saccharata;68;204;340;544
+Pulsatilla vulgaris;20;40;80;120
+Puschkinia scilloides;160;480;800;1120
+Pyracantha coccinea;12;24;48;72
+Quercus cerris;4;12;20;28
+Quercus rubra;60;180;300;600
+Ranunculus aconitifolius;116;232;348;580
+Ranunculus acris friesianus;12;12;60;120
+Ranunculus lanuginosus;4;4;8;12
+Ranunculus psilostachys;4;8;12;20
+Rapistrum rugosum;4;8;12;20
+Reseda lutea;140;280;560;840
+Reseda luteola;8;16;24;32
+Reynoutria × bohemica;1000;7000;10000;13000
+Reynoutria japonica;2000;10000;20000;40000
+Reynoutria sachalinensis;560;2240;3920;5600
+Rhabdocline pseudotsugae;112;112;134;157
+Rhinanthus alectorolophus;8;16;24;40
+Rhododendron brachycarpum;12;24;36;60
+Rhododendron catawbiense;28;84;140;196
+Rhododendron sutchuenense;4;8;12;20
+Rhus typhina;80;160;400;640
+Rhytidodus decimusquartus;12;24;48;72
+Ribes aureum;56;168;280;392
+Ribes divaricatum;48;144;240;336
+Ribes × pallidum;116;348;580;812
+Ribes sanguineum;132;396;660;1320
+Ricciocarpos natans;48;96;144;240
+Robinia pseudoacacia;40;120;200;280
+Robinia viscosa;4;8;12;20
+Rodgersia aesculifolia;4;4;8;12
+Rodgersia podophylla;84;168;252;420
+Rorippa × armoracioides;600;1800;3000;4200
+Rorippa austriaca;44;88;176;264
+Rosa acicularis;8;24;40;56
+Rosa carolina;4;4;8;12
+Rosa glauca;380;1140;2280;3800
+Rosa 'Hollandica';60;180;300;420
+Rosa moyesii;20;60;100;140
+Rosa multiflora;76;228;380;532
+Rosa pendulina;24;72;120;168
+Rosa rugosa;6220;18660;31100;62200
+Rosa × spaethiana;100;200;500;800
+Rubus allegheniensis;24;48;96;144
+Rubus armeniacus;168;336;504;840
+Rubus bifrons;4;4;4;8
+Rubus dasyphyllus;4;4;4;8
+Rubus echinatus;4;4;4;8
+Rubus euryanthemus;4;4;4;8
+Rubus fruticosus coll. 'Thornless Evergreen';4;4;8;12
+Rubus glandulosus;4;4;4;8
+Rubus hartmanii;4;4;4;8
+Rubus horridus;4;4;4;8
+Rubus laciniatus;160;320;800;1280
+Rubus leptothyrsus;4;4;4;8
+Rubus loganobaccus;4;4;4;8
+Rubus odoratus;180;360;540;900
+Rubus parviflorus;20;40;100;160
+Rubus pedemontanus;8;16;32;48
+Rubus pyramidalis;4;4;4;8
+Rubus rudis;4;4;4;8
+Rubus sciocharis;4;4;4;8
+Rubus silvaticus;4;4;4;8
+Rubus slesvicensis;4;4;4;8
+Rubus spectabilis;64;128;320;512
+Rubus tuberculatus;4;4;4;8
+Rudbeckia laciniata;60;120;300;480
+Rumex confertus;52;104;260;416
+Rumex patientia patientia;12;12;36;60
+Rumex pseudo-alpinus;32;64;96;128
+Rumex rugosus;32;32;96;160
+Sagina micropetala;4;4;8;20
+Salix acutifolia;4;4;12;20
+Salix alaxensis;44;132;220;352
+Salix alba chermesina;4;20;40;60
+Salix alba sericea;100;300;600;1000
+Salix alba vitellina;80;240;480;800
+Salix × alopecuroides;12;12;24;36
+Salix babylonica;4;4;8;12
+Salix 'Brekkavier';40;120;240;400
+Salix × calodendron;12;24;36;60
+Salix daphnoides daphnoides;40;80;160;240
+Salix daphnoides pomeranica;8;24;40;64
+Salix × dasyclados;160;320;640;960
+Salix euxina;204;408;816;1224
+Salix euxina 'Bullata';12;36;72;120
+Salix × fragilis;1752;3504;5256;8760
+Salix × holosericea;20;40;80;120
+Salix × laurina;4;4;8;12
+Salix × meyeriana;180;540;900;1440
+Salix × mollissima;48;96;144;240
+Salix × pendulina;4;4;12;20
+Salix purpurea;112;224;336;448
+Salix × rubra;4;12;24;40
+Salix × salamonii;36;72;144;216
+Salix × smithiana;500;1500;3000;5000
+Salix viminalis;500;1000;2000;3000
+Salvelinus fontinalis;2540;2540;3175;3810
+Salvelinus namaycush;68;113;224;437
+Salvia nemorosa;4;4;4;8
+Salvia officinalis;8;8;16;24
+Salvia verticillata;24;24;48;72
+Sambucus ebulus;4;4;8;16
+Sambucus pubens;28;84;140;224
+Sambucus racemosa;8820;44100;88200;176400
+Sanguisorba canadensis latifolia;8;16;24;32
+Sanguisorba × menziesii;4;4;8;12
+Sanguisorba minor;200;600;1000;1400
+Saponaria ocymoides;8;16;24;32
+Saponaria officinalis;900;1800;3600;5400
+Sargassum muticum;1208;1208;2416;3624
+Sawadaea bicornis;120;144;156;168
+Saxifraga × arendsii;36;180;360;540
+Saxifraga × geum;140;280;560;840
+Saxifraga hostii;4;4;8;12
+Saxifraga rosacea;60;120;240;360
+Saxifraga rotundifolia;48;96;240;384
+Saxifraga umbrosa;240;480;960;1440
+Saxifraga × urbium;12;60;120;240
+Schizoporella japonica;480;480;2400;4800
+Scilla forbesii;180;900;1800;2700
+Scilla luciliae;300;1500;3000;4500
+Scilla sardensis;48;240;480;720
+Scleranthus annuus annuus;140;420;840;1400
+Scopolia carniolica;160;480;800;1120
+Scrophularia chrysantha;8;8;16;24
+Scutellaria altissima;4;8;12;20
+Securigera varia;60;120;240;360
+Sedum dasyphyllum;4;16;32;48
+Sedum forsterianum;148;444;740;1480
+Sedum hispanicum;52;156;260;520
+Sedum lydium;16;32;48;80
+Sedum sexangulare;68;204;340;680
+Sempervivum tectorum;400;1200;2000;4000
+Senecio inaequidens;132;660;1320;2640
+Senecio leucanthemifolius vernalis;16;32;80;160
+Senecio ovatus;16;48;80;160
+Senecio pseudoarnica;28;56;84;140
+Senecio squalidus;12;12;24;36
+Senecio viscosus;5540;11080;16620;27700
+Senecio vulgaris hibernicus;20;60;100;200
+Sibbaldianthe bifurca orientalis;4;4;4;8
+Silene csereii;4;4;4;8
+Silene gallica;4;4;8;12
+Sinacalia tangutica;8;8;16;24
+Sisymbrium altissimum;240;480;960;1440
+Sisymbrium loeselii;48;96;144;240
+Sisymbrium orientale;20;20;40;60
+Sisymbrium strictissimum;8;8;16;24
+Sisyrinchium montanum;4;4;8;12
+Solanum americanum;20;20;40;60
+Solanum decipiens;52;104;208;312
+Solanum physalifolium;24;72;120;192
+Solanum villosum;4;4;12;20
+Solidago canadensis;5000;10000;15000;25000
+Solidago gigantea serotina;100;200;300;500
+Sorbaria sorbifolia;900;1800;2700;4500
+Sorbus austriaca;16;48;80;112
+Sorbus commixta;4;4;8;12
+Sorbus koehneana;48;96;144;240
+Sorbus latifolia;60;120;180;300
+Sorbus mougeotii;240;720;1200;2400
+Sphaeropsis sapinea;24;24;48;120
+Spiraea alba;60;120;240;360
+Spiraea × arguta;300;600;1200;1800
+Spiraea betulifolia;12;36;60;96
+Spiraea × billardii;1100;3300;5500;8800
+Spiraea chamaedryfolia;400;1200;2000;3200
+Spiraea × cinerea;60;120;240;360
+Spiraea douglasii;36;72;144;216
+Spiraea japonica;360;720;1800;2880
+Spiraea latifolia;128;256;512;768
+Spiraea × macrothyrsa;80;160;400;640
+Spiraea media;16;32;64;96
+Spiraea nipponica;12;24;48;72
+Spiraea × pseudosalicifolia;16;32;64;96
+Spiraea × rosalba;700;1400;3500;5600
+Spiraea × rubella;500;1500;2500;5000
+Spiraea salicifolia;600;1800;3000;4800
+Spiraea tomentosa;20;40;80;120
+Spiraea trilobata;8;16;32;48
+Spiraea × vanhouttei;172;344;860;1376
+Stachys arvensis;4;4;8;8
+Stachys byzantina;36;36;72;108
+Stachys germanica;4;4;8;12
+Stenidiocerus poecilus;48;48;96;144
+Stephanandra incisa;44;88;132;220
+Stratiotes aloides;8;8;16;16
+Stricticollis tobias;8;80;400;800
+Stromatinia cepivora;100;110;130;160
+Stromatinia gladioli;20;24;26;28
+Strongyloides stercoralis;20;20;40;80
+Stropharia rugosoannulata;16;16;80;160
+Styela clava;192;192;384;768
+Suillus cavipes;50;100;250;500
+Suillus grevillei;300;600;1200;3000
+Suillus placidus;8;8;16;40
+Suillus viscidus;16;32;80;160
+Sus scrofa;36;36;180;288
+Swida alba;400;1600;3200;4800
+Swida sericea;700;2100;3500;5600
+Symphoricarpos albus;1200;3600;6000;12000
+Symphyotrichum cordifolium;12;24;36;60
+Symphyotrichum laeve;12;24;36;60
+Symphyotrichum lanceolatum;24;48;72;120
+Symphyotrichum novi-belgii;100;300;500;700
+Symphyotrichum × salignum;60;180;300;420
+Symphyotrichum × versicolor;140;420;700;980
+Symphytum asperum;600;1800;3000;4200
+Symphytum officinale;300;900;1500;2100
+Symphytum tuberosum;8;8;16;24
+Symphytum × uplandicum;700;2100;3500;4900
+Syringa josikaea;200;600;1000;1400
+Syringa komarowii;24;72;120;192
+Tachyura parvula;12;240;480;1200
+Tanacetum coccineum;8;16;32;48
+Tanacetum corymbosum;4;4;8;12
+Tanacetum macrophyllum;4;4;8;12
+Tanacetum parthenium;600;1200;2400;3600
+Taphrina acericola;60;60;300;600
+Taphrina ulmi;24;48;120;168
+Taxus × media;40;400;800;1200
+Tegenaria domestica;236;236;1180;2360
+Telekia speciosa;300;900;1500;2400
+Tellima grandiflora;32;96;160;320
+Telmatogeton japonicus;4;4;20;60
+Tephroseris palustris;4;4;8;12
+Thalictrum aquilegiifolium;96;192;288;480
+Thalictrum delavayi;8;16;32;48
+Thalictrum minus minus;20;40;80;120
+Thalictrum speciosissimum;4;16;32;48
+Thecturota marchii;4;200;400;400
+Thermopsis lupinoides;4;8;16;24
+Thermopsis montana;28;56;112;168
+Thoracochaeta seticosta;8;32;120;240
+Thuja occidentalis;140;700;1400;2100
+Thuja plicata;60;300;600;1200
+Thymus praecox praecox;40;120;200;400
+Tiarella cordifolia;4;4;12;20
+Tilia × europaea;52;104;156;260
+Tilia platyphyllos;496;1488;2480;3472
+Tinca tinca;272;272;1961;17849
+Tremella simplex;8;16;40;320
+Tremulicerus fulgidus;16;32;48;64
+Tricellaria inopinata;8;8;40;80
+Trichiusa immigrata;28;2800;5600;8400
+Tricholoma psammopus;160;160;320;640
+Trifolium pannonicum;4;4;8;12
+Trifolium spadiceum;80;80;240;400
+Trioza apicalis;44;88;132;176
+Tripterygium wilfordii;4;4;4;8
+Trisetum flavescens;52;104;208;312
+Trixagus atticus;4;4;12;20
+Tsuga canadensis;4;12;20;28
+Tsuga heterophylla;308;1540;3080;4620
+Tulipa gesneriana;40;80;160;240
+Tulipa gesneriana 'Borøya';16;32;64;96
+Tulipa gesneriana 'Helldal';48;96;192;288
+Tulipa gesneriana 'The Pilot';80;160;320;480
+Tulipa sylvestris;860;1720;3440;5160
+Tulipa tarda;20;40;60;80
+Typhaea haagi;12;120;240;360
+Ulmus laevis;16;48;80;160
+Ulmus minor;16;32;48;80
+Vancouveria hexandra;4;4;8;12
+Veratrum album;8;8;16;24
+Verbascum densiflorum;28;28;56;112
+Verbascum lychnitis;12;12;36;60
+Verbascum phlomoides;12;12;24;48
+Verbascum speciosum;12;24;48;72
+Verbena officinalis;4;4;8;16
+Veronica austriaca austriaca;4;4;4;8
+Veronica austriaca teucrium;80;160;240;400
+Veronica filiformis;360;720;1800;2880
+Veronica gentianoides;68;204;340;680
+Veronica hederifolia hederifolia;52;104;260;416
+Veronica hederifolia lucorum;28;56;112;168
+Veronica hederifolia triloba;4;4;4;8
+Veronica opaca;4;4;8;16
+Veronica peregrina peregrina;96;480;672;960
+Veronica persica;1220;3660;6100;12200
+Veronica polita;8;8;16;32
+Viburnum lantana;240;720;1200;1920
+Vicia tenuifolia;36;36;72;108
+Vicia villosa;16;16;32;48
+Vinca minor;1352;4056;6760;13520
+Vincetoxicum rossicum;80;160;240;320
+Viola cornuta;20;60;100;160
+Viola suavis;8;8;8;16
+Viola × williamsii;16;80;160;240
+Viola × wittrockiana;200;600;1000;2000
+Viviparus viviparus;20;40;60;80
+Vulpia myuros;20;20;40;80
+Waldsteinia geoides;4;8;12;16
+Waldsteinia ternata;52;156;260;520
+Weigela florida;16;80;160;240
+Zonitoides arboreus;28;840;1120;1400
+Zyginella pulchra;20;40;60;80

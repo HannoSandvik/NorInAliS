@@ -1,15 +1,37 @@
 
+# This code calculates indicator P2 of NorInAliS
+
+
+
 # Load data from the Alien Species List 2018
-fab <- read.csv2("c:\\art\\publ.z\\ecosolev.20\\assess.txt", as.is=T) #¤
-aoo <- read.csv2("c:\\art\\neobindc\\aoo.txt", as.is=T) #¤
+# NB: The following dataset is not part of NorInAliS and has to be downloaded separately!
+# It is available from https://doi.org/10.5061/dryad.8sf7m0cjc
+# After downloading you have to either place this dataset in the working directory
+# or adjust the file name/path in the commands!
+if (file.exists("assess.txt")) {
+  fab  <- read.csv2("assess.txt", as.is=T)
+} else {
+  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
+}
+# The AOOs (areas of occupancy) provided in the above dataset are only the _best_
+# estimates of the _total_ AOO for each species (i.e. the expert judgement of the 
+# _median_ of the real AOO, including "dark figures" or unreported occurrences). 
+# This indicator needs more than that, viz. the low and high estimates of the
+# total AOO (i.e. lower and upper _quartiles_) as well as the _known_ AOO 
+# (i.e. excluding dark figures). These values are here read from a separate file.
+# Their source is https://artsdatabanken.no/fremmedartslista2018
+aoo <- read.csv2("aoo.txt", as.is=T)
+
 
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
 fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
+
 
 # Restrict the data to terrestrial species
 w <- which(fab$LifeSt %in% c("lim", "lim,mar", "lim,par", "lim,mar,par", "mar", "mar,par"))
 fab <- fab[-w,]
 aoo <- aoo[-w,]
+
 
 # Make sure that the two data frames are compatible
 if (all(fab$Name == aoo$Name)) {
@@ -18,8 +40,10 @@ if (all(fab$Name == aoo$Name)) {
   cat("ERROR: For some reason, the two dataframes are not compatible!\n")
 }
 
+
 # Load auxiliary functions
-eval(parse(text=readLines("c:\\art\\neobindc\\function.r"))) #¤
+eval(parse(text=readLines("function.r")))
+
 
 # Define additional auxiliary functions:
 # These two function use maximum-likelihood estimation to infer the standard deviation
@@ -40,8 +64,9 @@ if (length(w)) {
 }
 # This looks very much like a punching error in line 28. Most likely, the best
 # estimate should have been in the middle between the low and high estimate
-# (implying a dark figure of 1000). The error is corrected manually:
+# (implying a dark figure of 1000 rather than 10). The error is corrected manually:
 aoo$best[w] <- 80000
+
 
 # (2) Is any high estimate less than the corresponding best estimate?
 w <- which(aoo$high < aoo$best)
@@ -53,9 +78,11 @@ if (length(w)) {
 # we have to assume the low and high estimates to be equal to the best estimate:
 aoo$low[w] <- aoo$high[w] <- aoo$best[w]
 
+
 # (3) By definition, AOOs are multiples of 4 square kilometres. Some figures are
 # incompatible with this definition. We solve this by rounding upwards:
 aoo[, 2:5] <- ceiling(aoo[, 2:5] / 4) * 4
+
 
 # (4) Is any AOO greater than the area of mainland Norway?
 w <- which(aoo$high > 323800)
@@ -114,16 +141,13 @@ for (i in 1:nrow(aoo)) {
 }
 
 
-################################ AOO-ene
-
-#png("c:\\nina\\fremmede\\tiltaksp.lan\\opsjon\\figP2b.png", 1000, 1000, res=180)
+# Show a graph of the distribution of the best estimates of total AOOs
 par(mai=c(0.96, 0.96, 0.06, 0.06), lwd=1.8)
 H <- hist(log10(as.numeric(aoo$best)), breaks=seq(0, 6, 1/3),
   xlab="Area of occupancy (km²)", ylab="Number of species", main="",
   xaxt="n", cex.axis=1.2, cex.lab=1.8, lwd=1.8, col=grey(0.84))
 axis(1, 0:6, c(1, 10, 100, expression(10^3), expression(10^4), expression(10^5),
   expression(10^6)), cex.axis=1.2, lwd=1.8)
-#dev.off()
 
 
 
