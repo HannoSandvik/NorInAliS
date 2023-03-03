@@ -23,6 +23,12 @@ if (file.exists("assess.txt")) {
 aoo <- read.csv2("aoo.txt", as.is=T)
 
 
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ chick this later!
+fab <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                 as.is=T)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
 fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
 
