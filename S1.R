@@ -4,32 +4,22 @@
 
 
 # Load data from the Alien Species List 2018
-# NB: These datasets are not part of NorInAliS and have to be downloaded separately!
 # The "fab"  data are available from https://doi.org/10.5061/dryad.8sf7m0cjc
-# The "path" data are available from https://doi.org/10.5061/dryad.4b8gthtg7
-# After downloading you have to either place these datasets in the working directory
-# or adjust the file name/path in the commands!
-if (file.exists("assess.txt")) {
-  fab  <- read.csv2("assess.txt", as.is=T)
-} else {
-  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
-}
-if (file.exists("path.csv")) {
-  path <- read.csv2("path.csv", as.is=T)
-} else {
-  cat("Plase download \"path.csv\" from https://doi.org/10.5061/dryad.4b8gthtg7\n")
-}
-
-#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ chick this later!
 fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
                   as.is=T)
+# The "path" data are available from https://doi.org/10.5061/dryad.4b8gthtg7
 path <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/1823673"),
                   as.is=T)
-#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 
 
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
 fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
+
+
+# Translate NAs into "unknown"
+for (i in 5:7) {
+  path[which(is.na(path[, i])), i] <- "unknown"
+}
 
 
 # Count observations of novel alien species per year
@@ -68,17 +58,17 @@ running.mean <- function(x, n) {
 
 
 {# Estimate average, standard deviation and confidence intervals
-  cat("Average  2011-2015: " %+% mean(novelObs[2011:2015]) %+% "\n")
-  cat("St. Dev. 2011-2015: " %+%   sd(novelObs[2011:2015]) %+% "\n")
+  cat("Average  2011-2015: " %+% mean(novelObs[2011:2015])  %+% "\n")
+  cat("St. Dev. 2011-2015: " %+%   sd(novelObs[2011:2015])  %+% "\n")
   for (p in c(" 2.5", "25.0", "50.0", "75.0", "97.5")) {
     cat(p %+% "% CL 2011-2015: " %+% 
-      qnorm(as.numeric(p) / 100, mean(novelObs[2011:2015]), sd(novelObs[2011:2015])) %+% "\n"
+      qpois(as.numeric(p) / 100, mean(novelObs[2011:2015])) %+% "\n"
     )
   }
-  cat("Average  2012-2016: " %+% mean(novelObs[2012:2016]) %+% "\n")
-  cat("St. Dev. 2012-2016: " %+%   sd(novelObs[2012:2016]) %+% "\n")
-  cat("Average  2013-2017: " %+% mean(novelObs[2013:2017]) %+% "\n")
-  cat("St. Dev. 2013-2017: " %+%   sd(novelObs[2013:2017]) %+% "\n")
+  cat("Average  2012-2016: " %+% mean(novelObs[2012:2016])  %+% "\n")
+  cat("St. Dev. 2012-2016: " %+%   sd(novelObs[2012:2016])  %+% "\n")
+  cat("Average  2013-2017: " %+% mean(novelObs[2013:2017])  %+% "\n")
+  cat("St. Dev. 2013-2017: " %+%   sd(novelObs[2013:2017])  %+% "\n")
 }
 
 
@@ -94,7 +84,9 @@ for (pathway in rownames(Table)) {
   for (year in 2011:2015) {
     records[year - 2010] <- length(which(fab$Observ == year &
       fab$Impact %in% c("NK","LO","PH","HI","SE") &
-      fab$Name %in% path$Name[which(path$Introd & path$Time != "future" & path$Cat == pathway)]))
+      fab$Name %in% path$Name[path$Introd & 
+                              path$Time != "future" &
+                              path$Cat == pathway]))
   }
   Table[pathway, ] <- c(mean(records), sd(records))
 }
@@ -107,7 +99,8 @@ plot(1796:2017, novelObs[1796:2017], ty="n",
   xlim=c(1800, 2020), ylim=c(0, 24), xaxs="i", yaxs="i",
   xlab="Year", ylab="Novel introductions per year", cex.axis=1.2, cex.lab=1.8
 )
-polygon(c(1800, 1800:2017, 2017), c(0, novelObs[1800:2017], 0), col=grey(0.84), border=NA)
+polygon(c(1800, 1800:2017, 2017), c(0, novelObs[1800:2017], 0), 
+        col=grey(0.84), border=NA)
 lines(1796:2017+2, running.mean(novelObs, 5)[1796:2017], lwd=4.8, col="blue")
 axis(1, seq(1800, 2020, 10), F, T)
 axis(2, 0:24, F, T)

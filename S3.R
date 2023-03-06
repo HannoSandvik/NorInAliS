@@ -4,20 +4,17 @@
 
 
 # Load data from the Alien Species List 2018
-# NB: These datasets are not part of NorInAliS and have to be downloaded separately!
 # The "fab"  data are available from https://doi.org/10.5061/dryad.8sf7m0cjc
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
 # The "path" data are available from https://doi.org/10.5061/dryad.4b8gthtg7
-# After downloading you have to either place these datasets in the working directory
-# or adjust the file name/path in the commands!
-if (file.exists("assess.txt")) {
-  fab  <- read.csv2("assess.txt", as.is=T)
-} else {
-  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
-}
-if (file.exists("path.csv")) {
-  path <- read.csv2("path.csv", as.is=T)
-} else {
-  cat("Plase download \"path.csv\" from https://doi.org/10.5061/dryad.4b8gthtg7\n")
+path <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/1823673"),
+                  as.is=T)
+
+
+# Translate NAs into "unknown"
+for (i in 5:7) {
+  path[which(is.na(path[, i])), i] <- "unknown"
 }
 
 
@@ -26,7 +23,7 @@ fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
 
 
 # Restrict data to current pathways of secondary spread
-path <- path[which(!path$Introd & path$Time == "current" & path$Name %in% fab$Name), ]
+path <- path[!path$Introd & path$Time == "current" & path$Name %in% fab$Name, ]
 
 
 # Load auxiliary functions
@@ -44,7 +41,7 @@ asFreq  <- function(x) {
 asAbund <- function(x) {
   # translates an abundance interval into a numerical value
   sapply(x, function(z) switch(z,
-                               "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
+                "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
 }
 
 
@@ -131,7 +128,7 @@ S3c <- function(pathways) {
   if (length(w)) {
     freq[w] <- mean(freq[-w])
   }
-  abund <- asAbund(pathways$Abund[which(!pathways$Introd & pathways$Time == "current")])
+  abund <- asAbund(pathways$Abund[!pathways$Introd & pathways$Time == "current"])
   w <- which(is.na(abund))
   if (length(w)) {
     abund[w] <- mean(abund[-w])
@@ -144,9 +141,9 @@ S3c <- function(pathways) {
 {# Summarise available data on frequency and abundance
   N <- length(which(!path$Introd & path$Time == "current"))
   cat("Distribution of frequencies of seconadry spread events (per decade):\n")
-  print(table(path$Freq )[c(1, 3, 4, 2, 5   )] / N)
+  print(table(path$Freq )[c(1, 3, 4, 2, 5)] / N)
   cat("\n\nDistribution of abundances (individuals) per secondary spread event:\n")
-  print(table(path$Abund)[c(4, 3, 2, 1, 6)] / N)
+  print(table(path$Abund)[c(4, 3, 2, 1, 5)] / N)
 }
 
 

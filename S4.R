@@ -8,6 +8,7 @@ eval(parse(text=readLines("function.r")))
 
 
 # Input the data for 2016 to 2020
+# For the time being, this has to be done manually.
 # Source: https://view.nina.no/planteimport/
 # Data were read from the graph at the tab "Cumulative graphs"
 # with the following parameter choices:

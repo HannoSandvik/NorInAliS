@@ -4,20 +4,17 @@
 
 
 # Load data from the Alien Species List 2018
-# NB: These datasets are not part of NorInAliS and have to be downloaded separately!
 # The "fab"  data are available from https://doi.org/10.5061/dryad.8sf7m0cjc
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
 # The "path" data are available from https://doi.org/10.5061/dryad.4b8gthtg7
-# After downloading you have to either place these datasets in the working directory
-# or adjust the file name/path in the commands!
-if (file.exists("assess.txt")) {
-  fab  <- read.csv2("assess.txt", as.is=T)
-} else {
-  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
-}
-if (file.exists("path.csv")) {
-  path <- read.csv2("path.csv", as.is=T)
-} else {
-  cat("Plase download \"path.csv\" from https://doi.org/10.5061/dryad.4b8gthtg7\n")
+path <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/1823673"),
+                  as.is=T)
+
+
+# Translate NAs into "unknown"
+for (i in 5:7) {
+  path[which(is.na(path[, i])), i] <- "unknown"
 }
 
 
@@ -26,7 +23,7 @@ fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
 
 
 # Restrict data to current pathways of introduction
-path <- path[which(path$Introd & path$Time == "current" & path$Name %in% fab$Name), ]
+path <- path[path$Introd & path$Time == "current" & path$Name %in% fab$Name, ]
 
 
 # Load auxiliary functions
