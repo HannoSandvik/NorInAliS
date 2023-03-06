@@ -101,13 +101,13 @@ aoo$high[w] <- 323000
 
 
 # Simulations
-# This version creates the overall indicator value for P2
+# This version creates the overall indicator value for P2.
 # For high- and severe-impact species, do this first:
 # aoo <- aoo[which(fab$Impact %in% c("HI", "SE")),]
 # For the remaining species, do this first:
 # aoo <- aoo[which(fab$Impact %in% c("NK", "LO", "PH")),]
 N <- 100000  # random numbers per species
-M <- 323800  # maximum possible area
+M <- 323800  # maximum possible area in km^2
 AOO <- matrix(0, N, nrow(aoo))
 for (i in 1:nrow(aoo)) {
   if (any(is.na(aoo[i, 3:5]))) {
@@ -116,7 +116,7 @@ for (i in 1:nrow(aoo)) {
         # if no AOO is provided, assume it is 0
         AOO[, i] <- 0
       } else {
-        # of not total AOOs are provided, assume they equal the known AOO
+        # of no total AOOs are provided, assume they equal the known AOO
         AOO[, i] <- aoo$known[i]
       }
     } else {
@@ -125,7 +125,7 @@ for (i in 1:nrow(aoo)) {
     }
   } else {
     if (aoo$best[i] == 0) {
-      # is the best estimate is 0, keep it 0
+      # if the best estimate is 0, keep it 0
       AOO[, i] <- 0
     } else {
       # if low, best and high estimates are provided, estimate the standard
@@ -154,7 +154,4 @@ H <- hist(log10(as.numeric(aoo$best)), breaks=seq(0, 6, 1/3),
   xaxt="n", cex.axis=1.2, cex.lab=1.8, lwd=1.8, col=grey(0.84))
 axis(1, 0:6, c(1, 10, 100, expression(10^3), expression(10^4), expression(10^5),
   expression(10^6)), cex.axis=1.2, lwd=1.8)
-
-
-
 
