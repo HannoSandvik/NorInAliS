@@ -81,21 +81,18 @@ The indicators are:
 * R7 – Measures with cost–benefit analysis
 
 ## Effect (outcomes)
-The threat category contains four indicators, for one of which there is **R** code.
-
-### E1 – Introduction rate of novel alien species
-**R** code for E1 is [available](E1.R).
-
-It utilises data that is available from Sandvik et al. ([https://doi.org/10.1007/s10530-019-02058-x](2019)).
+The effect category contains four indicators, for one of which there is **R** code.
 
 ### E1 – Alien species eradicated
-For indicator T3, no **R** code is available.
+**R** code for E1 is [available](E1.R).
+
+It utilises data that has been published by Sandvik et al. ([2019](https://doi.org/10.1007/s10530-019-02058-x)).
 
 ### E2 – Successful measures against terrestrial alien species
-For indicator T3, no **R** code is available.
+For indicator E2, no **R** code is available.
 
 ### E3 – Successful measures against alien freshwater species
-For indicator T3, no **R** code is available.
+For indicator E3, no **R** code is available.
 
 ### E4 – Successful measures against marine alien species
-For indicator T3, no **R** code is available.
+For indicator E4, no **R** code is available.
