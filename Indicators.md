@@ -86,7 +86,7 @@ The effect category contains four indicators, for one of which there is **R** co
 ### E1 – Alien species eradicated
 **R** code for E1 is [available](E1.R).
 
-It utilises data that has been published by Sandvik et al. ([2019](https://doi.org/10.1007/s10530-019-02058-x)).
+It utilises data that have been published by Sandvik et al. ([2019](https://doi.org/10.1007/s10530-019-02058-x)).
 
 ### E2 – Successful measures against terrestrial alien species
 For indicator E2, no **R** code is available.
