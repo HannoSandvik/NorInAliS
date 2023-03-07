@@ -30,12 +30,12 @@ The pressure category contains five indicators, for all of which there is **R** 
 ### P1 – Number of alien species
 **R** code for P1 is [available](P1.R).
 
-The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc).
+The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P2 – Extent of terrestrial alien species
 **R** code for P2 is [available](P2.R).
 
-The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc).
+The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P3 – Extent of alien freshwater species
 **R** code for P3 is [not yet available](P3.R).
