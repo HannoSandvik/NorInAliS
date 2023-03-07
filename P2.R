@@ -4,29 +4,17 @@
 
 
 # Load data from the Alien Species List 2018
-# NB: The following dataset is not part of NorInAliS and has to be downloaded separately!
-# It is available from https://doi.org/10.5061/dryad.8sf7m0cjc
-# After downloading you have to either place this dataset in the working directory
-# or adjust the file name/path in the commands!
-if (file.exists("assess.txt")) {
-  fab  <- read.csv2("assess.txt", as.is=T)
-} else {
-  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
-}
+# The data are available from https://doi.org/10.5061/dryad.8sf7m0cjc
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
 # The AOOs (areas of occupancy) provided in the above dataset are only the _best_
-# estimates of the _total_ AOO for each species (i.e. the expert judgement of the 
-# _median_ of the real AOO, including "dark figures" or unreported occurrences). 
-# This indicator needs more than that, viz. the low and high estimates of the
+# estimates of the _total_ AOO for each species (i.e. the _median_ expert judgement
+# of the _real_ AOO, including "dark figures" or unreported occurrences). However,
+# this indicator needs more than that, viz. the _low_ and _high_ estimates of the
 # total AOO (i.e. lower and upper _quartiles_) as well as the _known_ AOO 
 # (i.e. excluding dark figures). These values are here read from a separate file.
 # Their source is https://artsdatabanken.no/fremmedartslista2018
 aoo <- read.csv2("aoo.txt", as.is=T)
-
-
-#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ chick this later!
-fab <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
-                 as.is=T)
-#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 
 
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
@@ -34,7 +22,8 @@ fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
 
 
 # Restrict the data to terrestrial species
-w <- which(fab$LifeSt %in% c("lim", "lim,mar", "lim,par", "lim,mar,par", "mar", "mar,par"))
+w <- which(fab$LifeSt %in%
+           c("lim", "lim,mar", "lim,par", "lim,mar,par", "mar", "mar,par"))
 fab <- fab[-w,]
 aoo <- aoo[-w,]
 
@@ -52,14 +41,16 @@ eval(parse(text=readLines("function.r")))
 
 
 # Define additional auxiliary functions:
-# These two function use maximum-likelihood estimation to infer the standard deviation
-# of the AOOs, based on the best estimate (median), low estimate (1st quartile) and 
-# high estimate (3rd quartile), and assuming a log-normal distribution.
+# These two function use maximum-likelihood estimation to infer the std. deviation
+# of the AOOs, based on the best estimate (median), low estimate (1st quartile)  
+# and high estimate (3rd quartile), and assuming a log-normal distribution.
 f <- function(s, mean, q1, q3) return(
   (q1 - qlnorm(0.25, log(mean) - exp(2*s)/2, exp(s)))^2 +
   (q3 - qlnorm(0.75, log(mean) - exp(2*s)/2, exp(s)))^2
 )
-findSD <- function(Ex, q1, q3) exp(optimise(f, c(-12, 12), mean=Ex, q1=q1, q3=q3)$min)
+findSD <- function(Ex, q1, q3) return(
+  exp(optimise(f, c(-12, 12), mean=Ex, q1=q1, q3=q3)$min)
+)
 
 
 # Check for obvious errors in the original data:
@@ -79,14 +70,15 @@ w <- which(aoo$high < aoo$best)
 if (length(w)) {
   print(aoo[w,])
 }
-# Here, it seems that the low and high estimate simply haven't been provided, and that,
-# as a default, the known AOO was listed instead. In the absence of other information, 
-# we have to assume the low and high estimates to be equal to the best estimate:
+# Here, it seems that the low and high estimate simply haven't been provided,
+# and that, as a default, the known AOO was listed instead. In the absence of
+# other information, we have to assume the low and high estimates to be equal
+# to the best estimate:
 aoo$low[w] <- aoo$high[w] <- aoo$best[w]
 
 
-# (3) By definition, AOOs are multiples of 4 square kilometres. Some figures are
-# incompatible with this definition. We solve this by rounding upwards:
+# (3) By definition, AOOs are multiples of 4 square kilometres. Some figures
+# are incompatible with this definition. We solve this by rounding upwards:
 aoo[, 2:5] <- ceiling(aoo[, 2:5] / 4) * 4
 
 
@@ -95,8 +87,9 @@ w <- which(aoo$high > 323800)
 if (length(w)) {
   print(aoo[w,])
 }
-# Indeed. That is clearly an overestimate. The high estimate is reduced to (a bit less 
-# than) the area of Norway. The other estimates are possible and are left unchanged.
+# Indeed. That is clearly an overestimate. The high estimate is reduced to
+# (a bit less than) the area of Norway. All other estimates are possible 
+# in principle, and are thus left unchanged.
 aoo$high[w] <- 323000
 
 
@@ -132,8 +125,8 @@ for (i in 1:nrow(aoo)) {
       # deviation and generate log-normally distributed random numbers
       SD <- findSD(aoo$best[i], aoo$low[i], aoo$high[i])
       AOO[, i] <- qlnorm(runif(N), log(aoo$best[i]) - SD * SD / 2, SD)
-      AOO[, i] <-  sapply(AOO[, i], min, M)  # constrain to ara of Norway
-      AOO[, i] <- ceiling(AOO[, i] / 4) * 4  # ensure multiples of 4 km^2
+      AOO[, i] <-  sapply(AOO[, i], min, M)  # constrain to area of Norway
+      AOO[, i] <- ceiling(AOO[, i] / 4) * 4  # ensure multiples  of 4 km^2
     }
   }
 }

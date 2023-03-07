@@ -4,15 +4,9 @@
 
 
 # Load data from the Alien Species List 2018
-# NB: This dataset is not part of NorInAliS and has to be downloaded separately!
-# It is available from https://doi.org/10.5061/dryad.8sf7m0cjc
-# After downloading you have to either place this dataset in the working directory
-# or adjust the file name/path in the commands!
-if (file.exists("assess.txt")) {
-  fab  <- read.csv2("assess.txt", as.is=T)
-} else {
-  cat("Please download \"assess.txt\" from https://doi.org/10.5061/dryad.8sf7m0cjc\n")
-}
+# The data are available from https://doi.org/10.5061/dryad.8sf7m0cjc
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
 
 
 # Restrict data to alien species that are reproducing unaidedly in mainland Norway
