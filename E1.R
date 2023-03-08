@@ -3,33 +3,45 @@
 
 
 
-# Indicator E1 presupposes that establishment categories according to Blackburn et al.'s (2011, http://dx.doi.org/10.1016/j.tree.2011.03.023) "unified framework" are available for two consecutive Alien Species Lists.
-# This information will be an integrative part of the coming Alien Species List (2023, in prep.). 
-# For the current Alien Species List (2018, https://artsdatabanken.no/fremmedartslista2018), establishment categories were published by Sandvik et al. (2019, https://doi.org/10.1007/s10530-019-02058-x).
-# For the previous Alien Species List (2012, https://www.biodiversity.no/Pages/201621/), this information is not available.
+# Indicator E1 presupposes that establishment categories according to Blackburn
+# et al.'s (2011, http://dx.doi.org/10.1016/j.tree.2011.03.023) "unified framework"
+# are available for two consecutive Alien Species Lists. 
+# This information will be an integrative part of the coming Alien Species List
+# (2023, in prep.). For the current Alien Species List (2018, 
+# https://artsdatabanken.no/fremmedartslista2018), establishment categories were
+# published by Sandvik et al. (2019, https://doi.org/10.1007/s10530-019-02058-x).
+# For the previous Alien Species List (2012, 
+# https://www.biodiversity.no/Pages/201621/), this information is not available.
 # This means that, currently, indicator E1 cannot be estimated automatically.
-# A "manual" comparison between the Alien Species Lists 2012 ans 2018 shows that no alien has been eradicated between 2012 and 2018.
-# The following script shows how this test can be automatised, albeit as an illustration only.
+# A "manual" comparison between the Alien Species Lists 2012 and 2018 shows that
+# no alien has been eradicated between 2012 and 2018.
+# The following script shows how this test can be automatised,
+# albeit as an illustration only.
 
 
 # Load the establishment categories from the Alien Species List 2018
 EstablishmentCategories2018  <- read.csv2("a-e.csv", as.is=T)
-# This file consists of the two columns "Name" and "CategN" of sheet "List I" of the Excel workbook which is Online Resource 1 of Sandvik et al. (2019, https://doi.org/10.1007/s10530-019-02058-x).
+# This file consists of the two columns "Name" and "CategN" of the sheet "List I"
+# of the Excel workbook which is Online Resource 1 of Sandvik et al. (2019, 
+# https://doi.org/10.1007/s10530-019-02058-x).
 
 
 # Load auxiliary functions
 eval(parse(text=readLines("function.r")))
 
 
-# method
-E1 <- function(List1, List2, ID1 = "Name", ID2 = "Name", EstCat1 = "CategN", EstCat2 = "CategN") {
+# Define an additional function:
+E1 <- function(List1, List2,
+               ID1 = "Name", ID2 = "Name",
+               EstCat1 = "CategN", EstCat2 = "CategN") {
   # It is crucially important that the identifiers are identical in the two lists.
   # Here, the species names are used as identifiers. 
   # However, species names may change due to taxonomic revision.
-  # Therefore, the use of unequivocal (e.g. numerical) species identifiers is to be preferred. 
-  w1 <- which(List1[, EstCat1] %in% c("C2", "C3, "D1", "D2", "E")
+  # Therefore, the use of unequivocal (e.g. numerical) species identifiers is
+  # to be preferred. 
+  w1 <- which(List1[, EstCat1] %in% c("C2", "C3", "D1", "D2", "E"))
     # species that are reproducing unaidedly at time 1
-  w2 <- which(List2[, EstCat2] == "A"
+  w2 <- which(List2[, EstCat2] == "A")
     # species that are absent from the assessment area at time 2
   eradicated <- List1[w1, ID1] %A% List2[w2, ID2]
     # union of the two sets of identifiers
@@ -37,15 +49,21 @@ E1 <- function(List1, List2, ID1 = "Name", ID2 = "Name", EstCat1 = "CategN", Est
 }
 
 
-# Illustration of the function
-# Since the establishment categories for the Alien Species List 2012 are not available, the actual result can be "simulated" as follows:
+# Illustration of the function:
+# Since the establishment categories for the Alien Species List 2012 are not
+# available, the actual result can be "simulated" as follows:
 EstablishmentCategories2012 <- EstablishmentCategories2018
-cat("Actual estimate for E1: " %+% E1(EstablishmentCategories2012, EstablishmentCategories2018) %+% "\n")
+cat("Actual estimate for E1: " %+%
+    E1(EstablishmentCategories2012, EstablishmentCategories2018) %+% "\n")
 
 
-# Further illustration
-# Just to illustrate the method, we may define a dummy dataset with shuffled establishment categories:
-DummyCategories <- EstablishmentCategories2018
-DummyCategories[, "CategN"] <- shuffle(DummyCategories[, "CategN"])
-cat("Randomised estimate for E1: " %+% E1(DummyCategories, EstablishmentCategories2018) %+% "\n")
+# Further illustration:
+# Just to illustrate the method, we may define a dummy dataset with shuffled
+# establishment categories:
+for (i in 1:9) {
+  DummyCategories <- EstablishmentCategories2018
+  DummyCategories[, "CategN"] <- sample(DummyCategories[, "CategN"])
+  cat("Randomised estimate for E1 (randomisation " %+% i %+% "): " %+%
+      E1(DummyCategories, EstablishmentCategories2018) %+% "\n")
+}
 

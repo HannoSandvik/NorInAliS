@@ -40,7 +40,7 @@ if (all(fab$Name == aoo$Name)) {
 eval(parse(text=readLines("function.r")))
 
 
-# Define additional auxiliary functions:
+# Define additional functions:
 # These two function use maximum-likelihood estimation to infer the std. deviation
 # of the AOOs, based on the best estimate (median), low estimate (1st quartile)  
 # and high estimate (3rd quartile), and assuming a log-normal distribution.

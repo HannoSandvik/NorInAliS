@@ -30,7 +30,7 @@ path <- path[path$Introd & path$Time == "current" & path$Name %in% fab$Name, ]
 eval(parse(text=readLines("function.r")))
 
 
-# Define additional auxiliary functions
+# Define additional functions
 asFreq  <- function(x) {
   # translates a frequency interval into a numerical value
   sapply(x, function(z) switch(z,

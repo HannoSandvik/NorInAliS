@@ -17,7 +17,7 @@ fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
 eval(parse(text=readLines("function.r")))
 
 
-# Define an additional auxiliary function
+# Define an additional function
 # This one assign numerical values from 1 to 5
 # to the five ecological impact catgeories
 as.nr <- function(x)
