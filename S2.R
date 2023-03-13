@@ -151,17 +151,30 @@ S2c <- function(pathways) {
 summary(lm(asFreq(Freq) ~ Cat, data=path, subset=which(Freq != "unknown")))
 
 
+# The simulations of S2(b) take a while.
+# To save time during rendering, a previous run is loaded:
+load("cache\\S2.Rdata")
+# It is based on the following command:
+# S2b_results <- S2b(path, nsim=100000)
+# Running it with lower `nsim` will of course speed it up,
+# but the results will then vary more across runs.
+
+
 {# Estimate the three indicator definitions for the current Alien Species List
-  cat("\nIndicator value for S2(a): " %+% S2a(path), "\n")
-  cat("\nIndicator value for S2(b):\n")
-  print(S2b(path, nsim=100000))        # this one takes a while!
+  cat("\nIndicator value for S2(a): " %+%       S2a(path),    "\n")
+  cat("\nIndicator value for S2(b):\n");  print(S2b_results)
   cat("\nIndicator value for S2(c): " %+% round(S2c(path)), "\n\n")
 }
 
 
 # Disaggregate indicator S2(b) for main pathway categories
+# If you do not want to display the cached results but run the simulation afresh,
+# you need to run the following line:
+# S2b_disaggr <- list()
 for (pw in c("release", "escape", "contaminant", "stowaway", "unaided")) {
   cat("\n\n" %+% pw %+% ":\n")
-  print(S2b(path[which(path$Cat == pw),], nsim=100000))
+  # Run the following line if you do not use cached results:
+  # S2b_disaggr[[pw]] <- S2b(path[which(path$Cat == pw),], nsim=100000)
+  print(S2b_disaggr[[pw]])
 }
 

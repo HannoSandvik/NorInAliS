@@ -36,12 +36,12 @@ Plants <- matrix(
   # but are expressed per container
   pla <- mean(Plants[1,] / Plants[2,])
   art <- mean(Arthropods[1,] / Arthropods[2,])
-  cat("Plants:\n" %+%
-       pla %+% " ± " %+% (sqrt(pla * 10) / 10) %+% " (mean ± SD)\n\n")
+  cat("Plants:\n"     %+%
+       pla %+% " ± "  %+% (sqrt(pla * 10) / 10) %+% " (mean ± SD)\n\n")
   cat("Arthropods:\n" %+%
-       art %+% " ± " %+% (sqrt(art * 10) / 10) %+% " (mean ± SD)\n\n")
-  cat("Totals:\n" %+%
-       (pla + art) %+% " ± " %+% (sqrt((art + pla) * 10) / 10) %+% " (mean ± SD)\n\n")
+       art %+% " ± "  %+% (sqrt(art * 10) / 10) %+% " (mean ± SD)\n\n")
+  cat("Totals:\n"     %+% (pla + art) %+% " ± " %+%
+                  (sqrt((art + pla) * 10) / 10) %+% " (mean ± SD)\n\n")
   cat("Confidence levels:\n")
   conf <- qpois(c(0.025, 0.25, 0.5, 0.75, 0.975), (art + pla) * 10) / 10
   names(conf) <- c("2.5", "25", "50", "75", "97.5") %+% "% CL"
