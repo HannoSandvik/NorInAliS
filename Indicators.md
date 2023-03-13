@@ -1,23 +1,23 @@
 # List of indicators
-This list contains all Norwegian Indicators for Alien Species.
+This list contains all Norwegian Indicators for Alien Species. Where applicable, links to **R** code and **R** Markdown files are provided. Many of the scripts use some common auxiliary functions, which are available [here](function.R).
 
 ## Spread (pathways)
 The spread category contains four indicators, for all of which there is **R** code.
 
 ### S1 – Introduction rate of novel alien species
-**R** code for S1 is [available](S1.R).
+For S1, there is [**R** code](S1.R) and an [**R** Markdown file](S1.rmd).
 
-The scripts reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
+The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S2 – Active pathways of introduction
-**R** code for S2 is [available](S2.R).
+For S2, there is [**R** code](S2.R) and an [**R** Markdown file](S2.rmd).
 
-The scripts reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
+The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S3 – Active pathways of secondary spread
-**R** code for S3 is [available](S3.R).
+For S3, there is [**R** code](S3.R) and an [**R** Markdown file](S3.rmd).
 
-The scripts reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
+The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S4 – Import rate reported from monitoring
 **R** code for S4 is [available](S4.R).
