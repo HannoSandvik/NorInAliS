@@ -61,9 +61,22 @@ novelObs.by2012[1980:2017] <-
 ```
 
 
-Load auxiliary functions
+Define auxiliary functions
 ```{r}
-eval(parse(text=readLines("function.r")))
+# Combines text strings
+"%+%" <- function(string1, string2) paste0(string1, string2)
+
+# Calculates a running mean
+running.mean <- function(x, n) {
+  z <- y <- x
+  if (n > 1) {
+    for (i in 2:n) {
+      z <- c(z[-1], NA)
+      y <- y + z
+    }
+  }
+  return(y / n)
+}
 ```
 
 

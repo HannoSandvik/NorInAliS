@@ -46,9 +46,10 @@ path <- path[!path$Introd & path$Time == "current" & path$Name %in% fab$Name, ]
 ```
 
 
-Load auxiliary functions:
+Define an auxiliary function:
 ```{r}
-eval(parse(text=readLines("function.r")))
+# Combines text strings
+"%+%" <- function(string1, string2) paste0(string1, string2)
 ```
 
 

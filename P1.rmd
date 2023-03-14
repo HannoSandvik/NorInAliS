@@ -1,0 +1,99 @@
+---
+title: P1
+subtitle: Number of alien species
+author: Hanno Sandvik
+date: 14 March 2023
+output:
+  html_document:
+    toc: true
+---
+
+## Introduction
+This code calculates indicator P1 of [NorInAliS](https://github.com/HannoSandvik/NorInAliS).
+
+
+## Preparations
+Load data from the Alien Species List 2018 
+([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)):
+```{r}
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
+```
+
+
+Restrict data to alien species that are reproducing unaidedly in mainland Norway:
+```{r}
+fab <- fab[which(fab$Status == "reproducing" & fab$Mainl),]
+```
+
+
+Define an auxiliary function:
+```{r}
+# Combines text strings
+"%+%" <- function(string1, string2) paste0(string1, string2)
+```
+
+
+## Functions
+Define indicator-specific functions:
+```{r}
+as.nr <- function(x)
+  # assigns numerical values from 1 to 5 to the five ecological impact categories
+  return(sapply(x, function(z) switch(z, "SE"=5,"HI"=4,"PH"=3,"LO"=2,"NK"=1,NA)))
+
+
+P1a <- function(dataset, column = "Impact")
+  # estimates P1(a)
+  return(length(which(dataset[, column] %in% c("SE", "HI", "PH", "LO", "NK"))))
+  
+
+P1b <- function(dataset, column = c("minImp", "Impact", "maxImp")) {
+  # estimates P1(b)
+  q0 <-       sum(as.nr(dataset[, column[1]]))  # minimum and 2.5% confidence level
+  q1 <- round(sum(as.nr(dataset[, column[2]]) * 0.75 +
+                  as.nr(dataset[, column[1]]) * 0.25))  # 1st quartile
+  q2 <-       sum(as.nr(dataset[, column[2]]))  # best estimate (mean and median)
+  q3 <- round(sum(as.nr(dataset[, column[2]]) * 0.75 +
+                  as.nr(dataset[, column[3]]) * 0.25))  # 3rd quartile
+  q4 <-       sum(as.nr(dataset[, column[3]]))  # maximum and 97.5% confidence level
+  SD <- round(sd(c(rep(q0,   floor(P1a(dataset, column[2]) / 4)),
+                   rep(q2, ceiling(P1a(dataset, column[2]) / 2)),
+                   rep(q4,   floor(P1a(dataset, column[2]) / 4)))))
+                   # approximation of the S.D.
+  p1b <- c(q2, SD, q0, q1, q2, q3, q4)
+  names(p1b) <- c("Average", "St.Dev.", c(2.5, 25, 50, 75, 97.5) %+% "%CL")
+  return(p1b)
+}
+```
+
+Note that these functions presuppose that the impact categories follow the 
+[GEIAA](https://doi.org/10.1007/s10530-019-02033-6) protocol. 
+For other impact assessment schemes, the functions would have to be adjusted.
+
+
+## Calculations
+P1(a) is simply the number of reproducing alien species in mainland Norway
+```{r}
+cat("P1(a): " %+% P1a(fab) %+% "\n")
+```
+
+
+The disaggregation for ecological impact categories looks like this:
+```{r}
+{ 
+  cat("Alien species in Norway by impact category:\n")
+  print(table(fab$Impact)[c("NK", "LO", "PH", "HI", "SE")])
+}
+```
+
+
+P1(b) is a weighted sum of impact categories. 
+It takes the uncertainty in impact categories into account,
+quantified as quartiles:
+```{r}
+{
+  cat("P1(b):\n")
+  print(P1b(fab))
+}
+```
+

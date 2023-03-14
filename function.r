@@ -1,4 +1,11 @@
-### Auxiliary functions
+### ==================================================
+### This file contains the functions used bu NorInAliS
+### ==================================================
+
+
+## Auxiliary functions
+## -------------------
+
 
 # Combines text strings
 "%+%" <- function(string1, string2) paste0(string1, string2)
@@ -28,4 +35,266 @@ running.mean <- function(x, n) {
   }
   return(y / n)
 }
+
+
+
+## Functions to calculate indicator S2
+## -----------------------------------
+
+
+asFreq  <- function(x) {
+  # translates a frequency interval into a numerical value
+  # Note that input is in events per decade,
+  #  whereas output is in events per year!
+  sapply(x, function(z) switch(z,
+                               "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
+}
+
+
+asAbund <- function(x) {
+  # translates an abundance interval into a numerical value
+  sapply(x, function(z) switch(z,
+                               "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
+}
+
+
+rincr <- function(n, min, max, r=TRUE) {
+  # generates random numbers according to an increasing
+  # triangular probability distribution
+  min + sqrt(    if(r) runif(n) else 0.5) * (max - min)
+}
+
+
+rdecr <- function(n, min, max, r=TRUE) {
+  # generates random numbers according to a decreasing
+  # triangular probability distribution
+  max - sqrt(1 - if(r) runif(n) else 0.5) * (max - min)
+}
+
+
+assignFrequencies <- function(n, pathways, pw, r=TRUE) {
+  # assigns unknown frequencies according to the distribution of known frequencies,
+  # separately for main pathway categories
+  freq <- table(
+    pathways$Freq[which(pathways$Freq != "unknown" & pathways$Cat == pw)]
+  )[c("<1", "1-8", "9-19", ">19")]
+  if (any(is.na(freq))) {
+    freq[which(is.na(freq))] <- 0
+  }
+  freq <- freq / sum(freq)
+  for (i in 4:2) {
+    freq[i] <- sum(freq[1:i])
+  }
+  seq <- if (r) runif(n) else (1:n - 0.5) / n
+  return(c("<1", "1-8", "9-19", ">19")[sapply(seq, function(x) which(freq > x)[1])])
+}
+
+
+S2a <- function(pathways) {
+  # estimates S2(a) according to Equation ¤1
+  return(length(unique(
+    (pathways$Name %+% pathways$Subcat)[pathways$Introd & pathways$Time == "current"]
+  )))
+}
+
+
+S2b <- function(pathways, nsim=0, CL=c(0.025, 0.25, 0.5, 0.75, 0.975)) {
+  # estimates S2(b) according to Equation ¤2
+  pathways <- pathways[which(pathways$Introd & pathways$Time == "current"),]
+  results <- matrix(0, nrow(pathways), max(1, nsim))
+  freq <- matrix(pathways$Freq, nrow(pathways), max(1, nsim))
+  for (pw in unique(pathways$Cat)) {
+    w <- which(pathways$Freq == "unknown" & pathways$Cat == pw)
+    if (length(w)) {
+      freq[w,] <- assignFrequencies(length(w) * max(1, nsim),
+                                    pathways, pw, r = nsim >= 1)
+    }
+  }
+  W <- freq == "<1"
+  results[W] <-                rincr(sum(W), 0.01,  0.1, r = nsim >= 1)
+  W <- freq == "1-8"
+  results[W] <- if (nsim >= 1) runif(sum(W), 0.10,  0.9) else 0.5
+  W <- freq == "9-19"
+  results[W] <- if (nsim >= 1) runif(sum(W), 0.90,  1.9) else 1.4
+  W <- freq == ">19"
+  results[W] <-                rdecr(sum(W), 1.90, 10.0, r = nsim >= 1)
+  if (nsim >=1 ) {
+    freq <- c(mean(apply(results, 2, sum)),
+              sd(apply(results, 2, sum)),
+              quantile(apply(results, 2, sum), CL))
+    names(freq) <- c("Average", "St.Dev.", (CL * 100) %+% "%CL")
+    return(freq)
+  } else {
+    return(sum(asFreq(freq)))
+  }
+}
+
+
+S2c <- function(pathways) {
+  # estimates S2(c) according to Equation ¤3
+  # (Note: this is a minimum implementation of indicator definition S2c!
+  #  It illustrates the way S2c would be estimated, but it currently ignores
+  #  uncertainty and simply assumes that the (utterly few) abundances reported
+  #  are in fact representative of the unknown abundances, which is unlikely.)
+  freq <- asFreq(pathways$Freq[which(pathways$Introd & pathways$Time == "current")])
+  w <- which(is.na(freq))
+  if (length(w)) {
+    mod <- lm(asFreq(Freq) ~ Cat, data=pathways, subset=which(Freq != "unknown"))
+    freq[w] <- predict(mod, data.frame(Cat = pathways$Cat[w]))
+  }
+  abund <- asAbund(pathways$Abund[pathways$Introd & pathways$Time == "current"])
+  w <- which(is.na(abund))
+  if (length(w)) {
+    abund[w] <- mean(abund[-w])
+  }
+  return(sum(freq * abund))
+}
+
+
+
+## Functions to calculate indicator S3
+## -----------------------------------
+
+
+asFreq  <- function(x) {
+  # translates a frequency interval into a numerical value
+  # Note that input is in events per decade,
+  #  whereas output is in events per year!
+  sapply(x, function(z) switch(z,
+                               "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
+}
+
+
+asAbund <- function(x) {
+  # translates an abundance interval into a numerical value
+  sapply(x, function(z) switch(z,
+                               "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
+}
+
+
+rincr <- function(n, min, max, r=TRUE) {
+  # generates random numbers according to an increasing
+  # triangular probability distribution
+  min + sqrt(    if(r) runif(n) else 0.5) * (max - min)
+}
+
+
+rdecr <- function(n, min, max, r=TRUE) {
+  # generates random numbers according to a decreasing
+  # triangular probability distribution
+  max - sqrt(1 - if(r) runif(n) else 0.5) * (max - min)
+}
+
+
+assignFrequencies <- function(n, pathways, pw, r=TRUE) {
+  # assigns unknown frequencies according to the distribution of known frequencies,
+  # separately for main pathway categories
+  freq <- table(
+    pathways$Freq[which(pathways$Freq != "unknown" & pathways$Cat == pw)]
+  )[c("<1", "1-8", "9-19", ">19")]
+  if (any(is.na(freq))) {
+    freq[which(is.na(freq))] <- 0
+  }
+  freq <- freq / sum(freq)
+  for (i in 4:2) {
+    freq[i] <- sum(freq[1:i])
+  }
+  seq <- if (r) runif(n) else (1:n - 0.5) / n
+  return(c("<1", "1-8", "9-19", ">19")[sapply(seq, function(x) which(freq > x)[1])])
+}
+
+
+S3a <- function(pathways) {
+  # estimates S3(a) according to Equation ¤1
+  return(length(unique(
+    (pathways$Name %+% pathways$Subcat)[!pathways$Introd & pathways$Time == "current"]
+  )))
+}
+
+
+S3b <- function(pathways, nsim=0, CL=c(0.025, 0.25, 0.5, 0.75, 0.975)) {
+  # estimates S3(b) according to Equation ¤2
+  pathways <- pathways[which(!pathways$Introd & pathways$Time == "current"),]
+  results <- matrix(0, nrow(pathways), max(1, nsim))
+  freq <- matrix(pathways$Freq, nrow(pathways), max(1, nsim))
+  for (pw in unique(pathways$Cat)) {
+    w <- which(pathways$Freq == "unknown" & pathways$Cat == pw)
+    if (length(w)) {
+      freq[w,] <- assignFrequencies(length(w) * max(1, nsim),
+                                    pathways, pw, r = nsim >= 1)
+    }
+  }
+  W <- freq == "<1"
+  results[W] <-                rincr(sum(W), 0.01,  0.1, r = nsim >= 1)
+  W <- freq == "1-8"
+  results[W] <- if (nsim >= 1) runif(sum(W), 0.10,  0.9) else 0.5
+  W <- freq == "9-19"
+  results[W] <- if (nsim >= 1) runif(sum(W), 0.90,  1.9) else 1.4
+  W <- freq == ">19"
+  results[W] <-                rdecr(sum(W), 1.90, 10.0, r = nsim >= 1)
+  if (nsim >=1 ) {
+    freq <- c(mean(apply(results, 2, sum)),
+              sd(apply(results, 2, sum)),
+              quantile(apply(results, 2, sum), CL))
+    names(freq) <- c("Average", "St.Dev.", (CL * 100) %+% "%CL")
+    return(freq)
+  } else {
+    return(sum(asFreq(freq)))
+  }
+}
+
+
+S3c <- function(pathways) {
+  # estimates S3(c) according to Equation ¤3
+  # (Note: this is a minimum implementation of indicator definition S3c!
+  #  It illustrates the way S3c would be estimated, but it currently ignores
+  #  uncertainty and simply assumes that the (utterly few) abundances reported
+  #  are in fact representative of the unknown abundances, which is unlikely.)
+  freq <- asFreq(pathways$Freq[!pathways$Introd & pathways$Time == "current"])
+  w <- which(is.na(freq))
+  if (length(w)) {
+    freq[w] <- mean(freq[-w])
+  }
+  abund <- asAbund(pathways$Abund[!pathways$Introd & pathways$Time == "current"])
+  w <- which(is.na(abund))
+  if (length(w)) {
+    abund[w] <- mean(abund[-w])
+  }
+  return(sum(freq * abund))
+}
+
+
+
+## Functions to calculate indicator P1
+## -----------------------------------
+
+
+as.nr <- function(x)
+  # assigns numerical values from 1 to 5 to the five ecological impact categories
+  return(sapply(x, function(z) switch(z, "SE"=5,"HI"=4,"PH"=3,"LO"=2,"NK"=1,NA)))
+
+
+P1a <- function(dataset, column = "Impact")
+  # estimates P1(a)
+  return(length(which(dataset[, column] %in% c("SE", "HI", "PH", "LO", "NK"))))
+
+
+P1b <- function(dataset, column = c("minImp", "Impact", "maxImp")) {
+  # estimates P1(b)
+  q0 <-       sum(as.nr(dataset[, column[1]]))  # minimum and 2.5% confidence level
+  q1 <- round(sum(as.nr(dataset[, column[2]]) * 0.75 +
+                    as.nr(dataset[, column[1]]) * 0.25))  # 1st quartile
+  q2 <-       sum(as.nr(dataset[, column[2]]))  # best estimate (mean and median)
+  q3 <- round(sum(as.nr(dataset[, column[2]]) * 0.75 +
+                    as.nr(dataset[, column[3]]) * 0.25))  # 3rd quartile
+  q4 <-       sum(as.nr(dataset[, column[3]]))  # maximum and 97.5% confidence level
+  SD <- round(sd(c(rep(q0,   floor(P1a(dataset, column[2]) / 4)),
+                   rep(q2, ceiling(P1a(dataset, column[2]) / 2)),
+                   rep(q4,   floor(P1a(dataset, column[2]) / 4)))))
+  # approximation of the S.D.
+  p1b <- c(q2, SD, q0, q1, q2, q3, q4)
+  names(p1b) <- c("Average", "St.Dev.", c(2.5, 25, 50, 75, 97.5) %+% "%CL")
+  return(p1b)
+}
+
 
