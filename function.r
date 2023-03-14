@@ -1,5 +1,5 @@
 ### ==================================================
-### This file contains the functions used bu NorInAliS
+### This file contains the functions used by NorInAliS
 ### ==================================================
 
 
