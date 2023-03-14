@@ -1,5 +1,5 @@
 # List of indicators
-This list contains all Norwegian Indicators for Alien Species. Where applicable, links to **R** Markdown files are provided. In addition, the **R** defined and used are available as [**R** script](function.r).
+This list contains all Norwegian Indicators for Alien Species. Where applicable, links to **R** Markdown files are provided. In addition, the **R** functions defined and used are available as [**R** script](function.r).
 
 ## Spread (pathways)
 The spread category contains four indicators, for all of which there is **R** code.
