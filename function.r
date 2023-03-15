@@ -298,3 +298,65 @@ P1b <- function(dataset, column = c("minImp", "Impact", "maxImp")) {
 }
 
 
+
+## Functions to calculate indicator P2
+## -----------------------------------
+
+
+# The first two functions use maximum-likelihood estimation to infer the 
+# standard deviation of the AOOs, based on the best estimate (median), 
+# low estimate (1st quartile) and high estimate (3rd quartile), 
+# and assuming a log-normal distribution.
+
+
+f <- function(s, mean, q1, q3) return(
+  (q1 - qlnorm(0.25, log(mean) - exp(2*s)/2, exp(s)))^2 +
+    (q3 - qlnorm(0.75, log(mean) - exp(2*s)/2, exp(s)))^2
+)
+
+
+findSD <- function(Ex, q1, q3) return(
+  exp(optimise(f, c(-12, 12), mean=Ex, q1=q1, q3=q3)$min)
+)
+
+
+P2 <- function(dataset,
+               column = c("known", "low", "best", "high"),
+               nsim = 100000, 
+               maxArea = 323800) {
+  # simulates AOOs for all species, which is the basis of indicator P2
+  N <- nsim     # random numbers per species
+  M <- maxArea  # maximum possible area in km^2
+  aoo <- dataset[, column]
+  AOO <- matrix(0, N, nrow(aoo))
+  for (i in 1:nrow(aoo)) {
+    if (any(is.na(aoo[i, c("low", "best", "high")]))) {
+      if (is.na(aoo$best[i])) {
+        if (is.na(aoo$known[i])) {
+          # if no AOO is provided, assume it is 0
+          AOO[, i] <- 0
+        } else {
+          # of no total AOOs are provided, assume they equal the known AOO
+          AOO[, i] <- aoo$known[i]
+        }
+      } else {
+        # if no low and high estimates are provided, use the best estimate
+        AOO[, i] <- aoo$best[i]
+      }
+    } else {
+      if (aoo$best[i] == 0) {
+        # if the best estimate is 0, keep it 0
+        AOO[, i] <- 0
+      } else {
+        # if low, best and high estimates are provided, estimate the standard
+        # deviation and generate log-normally distributed random numbers
+        SD <- findSD(aoo$best[i], aoo$low[i], aoo$high[i])
+        AOO[, i] <- qlnorm(runif(N), log(aoo$best[i]) - SD * SD / 2, SD)
+        AOO[, i] <-  sapply(AOO[, i], min, M)  # constrain to area of Norway
+        AOO[, i] <- ceiling(AOO[, i] / 4) * 4  # ensure multiples  of 4 km^2
+      }
+    }
+  } # i 
+  return(AOO)
+} # P2
+
