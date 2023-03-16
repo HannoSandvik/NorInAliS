@@ -360,3 +360,26 @@ P2 <- function(dataset,
   return(AOO)
 } # P2
 
+
+
+## Functions to calculate indicator E1
+## -----------------------------------
+
+
+E1 <- function(List1, List2,
+               ID1 = "Name", ID2 = "Name",
+               EstCat1 = "CategN", EstCat2 = "CategN") {
+  # It is crucially important that the identifiers are identical in the two lists.
+  # Here, the species names are used as identifiers. 
+  # However, species names may change due to taxonomic revision.
+  # Therefore, the use of unequivocal (e.g. numerical) species identifiers is
+  # to be preferred. 
+  w1 <- which(List1[, EstCat1] %in% c("C2", "C3", "D1", "D2", "E"))
+  # species that are reproducing unaidedly at time 1
+  w2 <- which(List2[, EstCat2] == "A")
+  # species that are absent from the assessment area at time 2
+  eradicated <- List1[w1, ID1] %A% List2[w2, ID2]
+  # union of the two sets of identifiers
+  return(length(eradicated))
+}
+

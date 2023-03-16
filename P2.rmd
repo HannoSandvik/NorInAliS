@@ -28,6 +28,7 @@ the _known_ AOO (i.e. excluding dark figures). These values are here read from a
 separate file. Their source is https://artsdatabanken.no/fremmedartslista2018.
 ```{r}
 aoo <- read.csv2("cache/aoo.txt", as.is=T)
+head(aoo)
 ```
 
 
