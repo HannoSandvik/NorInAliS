@@ -256,3 +256,15 @@ CL[3, ] <- conf
 print(CL)
 ```
 
+
+Have a look at lake areas:
+```{r}
+{
+  cat("Average area of lakes _with_  alien species: " %+%
+      round(mean(WFD$Area, na.rm=TRUE), 2) %+% " km²\n")
+  cat("Average area of lakes without alien species: " %+%
+      round((Alakes - P3[1, 4]) / (Nlakes - P3[1, 1]), 2) %+% " km²\n")
+}
+```
+Large lakes are overrepresented among lakes with alien species.
+

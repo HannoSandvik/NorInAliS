@@ -13,6 +13,17 @@ This code calculates indicator P4 of [NorInAliS](https://github.com/HannoSandvik
 
 
 ## Preparations
+Define auxiliary functions:
+```{r}
+# Combines text strings
+"%+%" <- function(string1, string2) paste0(string1, string2)
+
+
+# I just find this more intuitive...
+"%contains%" <- function (textstring, searchtext) grepl(searchtext, textstring)
+```
+
+
 Load data from the Alien Species List 2018 
 ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)):
 ```{r}
@@ -88,13 +99,22 @@ Load the relevant data from the reporting system for the Water Framework Directi
 (WFD) in Norway (for details, [see indicator P3](P3.rmd)):
 ```{r}
 WFD <- read.csv("cache/WFD.csv", sep=";", dec=".", as.is=TRUE)
-head(WFD)
 ```
 
 
 Restrict the data to coastal waterbodies:
 ```{r}
 WFD <- WFD[which(WFD$Category == "Coastal"), ]
+head(WFD)
+```
+
+
+How many alien species are reported in the two datasets?
+```{r}
+{
+  cat("Alien Species List 2018:   " %+% length(unique(fab$Name))    %+% " spp.\n")
+  cat("Water Framework Directive: " %+% length(unique(WFD$Species)) %+% " spp.\n")
+}
 ```
 
 
@@ -103,17 +123,6 @@ Specify the total number and size of waterbodies
 ```{r}
 Ncoast <-  2283  # number of coastal waterbodies
 Acoast <- 93649  # total area of coastal waterbodies in square kilometres
-```
-
-
-Define auxiliary functions:
-```{r}
-# Combines text strings
-"%+%" <- function(string1, string2) paste0(string1, string2)
-
-
-# I just find this more intuitive...
-"%contains%" <- function (textstring, searchtext) grepl(searchtext, textstring)
 ```
 
 
@@ -221,10 +230,12 @@ if (length(w)) {
 If you want P2 for _high- and severe-impact_ species only, do this first (not run):
 ```{r, eval=FALSE, echo=TRUE}
 aoo <- aoo[which(fab$Impact %in% c("HI", "SE")),]
+WFD <- WFD[which(WFD$Impact %in% c("HI", "SE")),]
 ```
 If you want P2 for the _remaining_ species only, do this first (not run):
 ```{r, eval=FALSE, echo=TRUE}
 aoo <- aoo[which(fab$Impact %in% c("NK", "LO", "PH")),]
+WFD <- WFD[which(WFD$Impact %in% c("NK", "LO", "PH")),]
 ```
 If you want P2 for _all_ alien species (**default**), do none of the above.
 
