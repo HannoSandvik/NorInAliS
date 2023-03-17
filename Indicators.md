@@ -33,18 +33,22 @@ The pressure category contains five indicators, for all of which there is **R** 
 The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P2 – Extent of terrestrial alien species
-**R** code for P2 is [available](P2.R).
+**R** code for P2 is [available](P2.rmd). It contains some indicator-specific [functions](function.r).
 
 The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P3 – Extent of alien freshwater species
-**R** code for P3 is [not yet available](P3.R).
+**R** code for P3 is [available](P3.rmd).
+
+It utilises data that have been downloaded from [Vann-nett](http://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P4 – Extent of marine alien species
-**R** code for P4 is [not yet available](P4.R).
+**R** code for P4 is [available](P4.rmd).
+
+It utilises data that have been downloaded from [Vann-nett](http://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P5 – Alien species reported from monitoring
-**R** code for P5 is [not yet available](P5.R).
+**R** code for P5 is [not yet available](P5.rmd).
 
 ## Threat (state)
 The threat category contains three indicators, for two of which there is **R** code.
@@ -84,7 +88,7 @@ The indicators are:
 The effect category contains four indicators, for one of which there is **R** code.
 
 ### E1 – Alien species eradicated
-**R** code for E1 is [available](E1.R).
+**R** code for E1 is [available](E1.rmd).
 
 It utilises data that have been published by Sandvik et al. ([2019](https://doi.org/10.1007/s10530-019-02058-x)).
 
