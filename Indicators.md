@@ -40,12 +40,12 @@ The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.
 ### P3 – Extent of alien freshwater species
 **R** code for P3 is [available](P3.rmd).
 
-It utilises data that have been downloaded from [Vann-nett](http://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
+It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P4 – Extent of marine alien species
 **R** code for P4 is [available](P4.rmd).
 
-It utilises data that have been downloaded from [Vann-nett](http://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
+It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P5 – Alien species reported from monitoring
 **R** code for P5 is [not yet available](P5.rmd).
