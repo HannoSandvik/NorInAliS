@@ -1,11 +1,11 @@
 ---
-title: P2
+title: "P2"
 subtitle: Extent of terrestrial alien species
-author: Hanno Sandvik
-date: 15 March 2023
+author: "Hanno Sandvik"
+date: "15 March 2023"
 output:
-  html_document:
-    toc: true
+  md_document:
+    toc: yes
 ---
 
 ## Introduction
