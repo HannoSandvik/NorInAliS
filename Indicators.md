@@ -25,7 +25,7 @@ The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10
 It utilises data that have been read from NINA's [survey of stowaways in imported ornamental plants](https://view.nina.no/planteimport/).
 
 ## Pressure (impacts)
-The pressure category contains five indicators, for all of which there is **R** code.
+The pressure category contains five indicators, for four of which there is **R** code.
 
 ### P1 – Number of alien species
 **R** code for P1 is [available](P1.rmd). It contains some indicator-specific [functions](function.r).
@@ -48,7 +48,7 @@ It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no
 It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P5 – Alien species reported from monitoring
-**R** code for P5 is [not yet available](P5.rmd).
+For indicator P5, no **R** code is available.
 
 ## Threat (state)
 The threat category contains three indicators, for two of which there is **R** code.
