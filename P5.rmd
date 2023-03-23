@@ -217,43 +217,84 @@ But it means that, for 2019 and 2020, the alien species have to be extracted
 by comparing the ANO species list per survey point (variable `art_alle_registrert`) 
 with the species names in the Alien Species List 2018:
 ```{r}
-ANO$fa_registrert <- 0
+ANO$number_of_alien_species <- 0
 AlienSpecies <- c()
 for (i in fab$Name) {
   w <- which(ANO$art_alle_registrert %contains% gsub(" ", "_", tolower(i)))
   AlienSpecies <- c(AlienSpecies, rep(i, length(w)))
-  ANO$fa_registrert[w] <- ANO$fa_registrert[w] + 1
+  ANO$number_of_alien_species[w] <- ANO$number_of_alien_species[w] + 1
 }
 ```
 
 
-## Calculations
-¤¤¤
+Check the available ANO data on alien species:
 ```{r}
-table(ANO$fa_total_dekning > 0, ANO$MES, useNA="always")
+table(ANO$fa_total_dekning > 0, ANO$number_of_alien_species, useNA="always")
 ```
 
 
+This shows that there are quite some inconsistent cases, especially survey points 
+were the reported cover of alien species is greater than zero, although no 
+alien species name is recorded; as well as one case were an alien species name 
+is recorded, although the cover of alien species is reported to be zero. 
+We correct these, assuming the errors are due to omission:
 ```{r}
-summary(ANO$fa_total_dekning)
+ANO  $fa_total_dekning[which(ANO$number_of_alien_species > 0)] <- sapply(
+  ANO$fa_total_dekning[which(ANO$number_of_alien_species > 0)],
+  max, 0.1, na.rm = TRUE)
+ANO  $number_of_alien_species[which(ANO$fa_total_dekning > 0)] <- sapply(
+  ANO$number_of_alien_species[which(ANO$fa_total_dekning > 0)],
+  max, 1,   na.rm = TRUE)
+```
+¤¤¤
+Problem:
+* Pinus mugo uncinata recorded as pinus_uncinata
+* Picea × lutzii recorded as picea_×lutzii
+* Cotoneaster ikke artsbestemt!
+
+
+## Calculations
+Show the number of alien species recorded per ANO survey point:
+```{r}
 table(ANO$fa_registrert, useNA="always")
 ```
+As we had seen above, not all alien species seem to have been recorded. 
+However, based on recorded alien species, there was not a single case in 2019 or 2020 
+where more than one alien species was found in an survey point.
 
 
-
+The alien species recorded were:
 ```{r}
 table(AlienSpecies)
-table(ANO$fa_total_dekning > 0, ANO$fa_registrert, useNA="always")
 ```
 
+
+The cover of alien species in ANO survey points was:
 ```{r}
-ANO$fa_total_dekning[ANO$fa_registrert > 0] <- sapply(ANO$fa_total_dekning[ANO$fa_registrert > 0], max, 0.1, na.rm = TRUE)
+summary(ANO$fa_total_dekning)
+summary(ANO$fa_total_dekning[which(ANO$fa_total_dekning > 0)])
 ```
 
+
+P¤1
+```{r}
+length(which(ANO$number_of_alien_species > 0)) / nrow(ANO)
+```
+
+
+P¤2
+```{r}
+sum(ANO$number_of_alien_species > 0, na.rm = TRUE) / nrow(ANO)
+```
+
+
+P¤3
 ```{r}
 sum(ANO$fa_total_dekning, na.rm = TRUE) / nrow(ANO)
 ```
 
+
+P¤ ecosystem-wise
 ```{r}
 length(which(ANO$fa_total_dekning > 0)) / nrow(ANO)
 table(ANO$MES[ANO$fa_total_dekning > 0])
