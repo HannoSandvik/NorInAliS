@@ -1,0 +1,274 @@
+---
+title: P5
+subtitle: Alien species reported from monitoring
+author: Hanno Sandvik
+date: 22 March 2023
+output:
+  html_document:
+    toc: true
+---
+
+## Introduction
+This code calculates indicator P5 of [NorInAliS](https://github.com/HannoSandvik/NorInAliS).
+
+
+## Preparations
+Load the `sf` package ([Pebesma 2018](https://doi.org/10.32614/RJ-2018-009)):
+```{r}
+library(sf)
+```
+
+
+Download data from the "spatially representative nature monitoring program for terrestrial ecosystems" 
+(or **ANO**, by its Norwegian acronym):
+```{r}
+download.file("https://nedlasting.miljodirektoratet.no/naturovervaking/naturovervaking_eksport.gdb.zip",
+              "ANO.gdb.zip")
+```
+
+
+Extract the layer containing ANO's survey points:
+```{r}
+unzip("ANO.gdb.zip", exdir = "P5")
+ANO <- st_read("P5\\naturovervaking_eksport.gdb", layer = "ANO_SurveyPoint")
+```
+
+
+Restrict data to information collected in 2019 and 2020:
+```{r}
+years <- 2019:2020
+ANO <- ANO[which(ANO$aar %in% years), ]
+```
+
+
+Check the number of survey points in the selected portion of the ANO dataset:
+```{r}
+nrow(ANO)
+```
+
+
+Load data from the Alien Species List 2018 ([Sandvik et al. 2020)](https://doi.org/10.5061/dryad.8sf7m0cjc); 
+this dataset should not be needed for indicator P5 in the future, but since some variables 
+are currently missing from the ANO data, they need to be read separately):
+```{r}
+fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
+                  as.is=T)
+```
+
+
+Restrict data to alien plants that are reproducing unaidedly in mainland Norway:
+```{r}
+fab <- fab[which(fab$Kingd == "Plantae" & fab$Status == "reproducing" & fab$Mainl),]
+```
+
+
+Define auxiliary functions:
+```{r}
+# Combines text strings
+"%+%" <- function(string1, string2) paste0(string1, string2)
+
+
+# I just find this more intuitive...
+"%contains%" <- function (textstring, searchtext) grepl(searchtext, textstring)
+```
+
+
+The ANO variable `hovedoekosystem_punkt` should contain the main ecosystem 
+in each survey point:
+```{r}
+table(ANO$hovedoekosystem_punkt, useNA="always")
+```
+
+
+For some reason, the information is missing for the majority of survey points. 
+We can try to fill it in using other ANO variables. 
+The variable `kartleggingsenhet_1m2` contains the ecosystem for survey points, 
+following the "Nature in Norway" system (see [Halvorsen et al. ¤¤¤](¤¤¤)). 
+Let's define a new column, `MES`, for the main ecosystem:
+```{r}
+ANO$MES <- NA
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "F")] <- "freshwater"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "H")] <- "marine"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "I")] <- "ice/snow"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "L")] <- "freshwater"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "M")] <- "marine"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "O")] <- "freshwater"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2, 1, 1) == "V")] <- "wetlands"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 3) %in%
+  c("T1-", "T5-", "T6-", "T27-"))]                             <- "rock"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 3) %in%
+  c("T2-", "T8-", "T11-", "T12-", "T13-", "T15-", "T16-", "T17-",
+    "T18-", "T20-", "T21-", "T23-", "T24-", "T25-", "T29-"))]  <- "open lowlands"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 3) %in%
+  c("T3-", "T7-", "T14-", "T22-", "T26-"))]                    <- "alpine"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 3) %in%
+  c("T4-", "T30-"))]                                           <- "woodlands"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 3) %in%
+  c("T9-", "T10-", "T19-", "T28-"))]                           <- "Arctic"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 4) %in%
+  c("T31-", "T32-", "T33-", "T34-"))]                          <- "semi-natural"
+ANO$MES[which(substr(ANO$kartleggingsenhet_1m2 %+% "-", 1, 4) %in%
+  ("T" %+% (35:45) %+% "-"))]                                  <- "strongly altered"
+table(ANO$MES, useNA="always")
+```
+
+
+Still, quite some missing values. We can get a few more from `hovedoekosystem_punkt:
+```{r}
+table(ANO$hovedoekosystem_punkt[which(is.na(ANO$MES))], useNA="always")
+ANO$MES[which(is.na(ANO$MES) &
+              ANO$hovedoekosystem_punkt == "ferskvann")]       <- "freshwater"
+ANO$MES[which(is.na(ANO$MES) &
+              ANO$hovedoekosystem_punkt == "fjell")]           <- "alpine"
+ANO$MES[which(is.na(ANO$MES) &
+              ANO$hovedoekosystem_punkt == "naturlig_apne")]   <- "open lowlands"
+ANO$MES[which(is.na(ANO$MES) & ANO$hovedoekosystem_punkt ==
+                 "Utilgjengelig punkt i bratt fjellvegg. ")]   <- "inaccessible"
+table(ANO$MES, useNA="always")
+```
+
+
+In some cases, ecosystems are reported for the larger survey _areas_ 
+(each of which contains 18 survey _points_). 
+By assuming that these ecosystems are representative of the survey points, 
+we can fill in some more data:
+```{r}
+table(ANO$kartleggingsenhet_250m2[which(is.na(ANO$MES))], useNA="always")
+ANO$MES[which(is.na(ANO$MES) & ANO$kartleggingsenhet_250m2 == "ferskvann")] <- 
+                                                                  "freshwater"
+ANO$MES[which(is.na(ANO$MES) & ANO$kartleggingsenhet_250m2 == "hav")] <-
+                                                                  "marine"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "F")] <-
+                                                                  "freshwater"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "H")] <-
+                                                                  "marine"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "I")] <-
+                                                                  "ice/snow"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "L")] <-
+                                                                  "freshwater"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "M")] <-
+                                                                  "marine"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "O")] <-
+                                                                  "freshwater"
+ANO$MES[which(is.na(ANO$MES) & substr(ANO$kartleggingsenhet_250m2, 1, 1) == "V")] <-
+                                                                  "wetlands"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 3) %in%
+                c("T1-", "T5-", "T6-", "T27-"))]               <- "rock"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 3) %in%
+                c("T2-", "T8-", "T11-", "T12-", "T13-", "T15-", "T16-", "T17-",
+                  "T18-", "T20-", "T21-", "T23-", "T24-", "T25-", "T29-"))]  <- 
+                                                                  "open lowlands"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 3) %in%
+                c("T3-", "T7-", "T14-", "T22-", "T26-"))]      <- "alpine"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 3) %in%
+                c("T4-", "T30-"))]                             <- "woodlands"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 3) %in%
+                c("T9-", "T10-", "T19-", "T28-"))]             <- "Arctic"
+ANO$MES[which(is.na(ANO$MES) &
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 4) %in%
+                c("T31-", "T32-", "T33-", "T34-"))]            <- "semi-natural"
+ANO$MES[which(is.na(ANO$MES) & 
+              substr(ANO$kartleggingsenhet_250m2 %+% "-", 1, 4) %in%
+                ("T" %+% (35:45) %+% "-"))]                    <- "strongly altered"
+table(ANO$MES, useNA="always")
+```
+
+
+Some survey points may have been inaccessible. 
+Let's check the variable `utilgjengelig_punkt`:
+```{r}
+table(ANO$utilgjengelig_punkt[which(is.na(ANO$MES))], useNA="always")
+ANO$MES[which(is.na(ANO$MES) & ANO$utilgjengelig_punkt == "ja")] <- "inaccessible"
+table(ANO$MES, useNA="always")
+```
+
+
+There are still some survey points left for which we were unable to find the main ecosystem. 
+We have to exclude those, in addition to inaccessible points, main ecosystems where we do 
+not expect vascular plants (freshwater, ice/snow, marine, rock) or were we are not 
+interested in alien species (strongly altered nature, such as gardens).
+```{r}
+ANO <- ANO[which(ANO$MES %in% c("alpine", "Arctic", "open lowlands",
+                                "semi-natural", "wetlands", "woodlands")), ]
+```
+
+
+Check how many survey points are left after we have excluded the irrelevant ones:
+```{r}
+nrow(ANO)
+```
+That's not too bad.
+
+
+Check which alien species have been recorded:
+```{r}
+table(ANO$fa_registrert, useNA="always")
+```
+
+
+That's a let-down. For some reason, the ANO variable `fa_registrert` has not been used. 
+This will hopefully change in future ANO survey rounds. 
+But it means that, for 2019 and 2020, the alien species have to be extracted 
+by comparing the ANO species list per survey point (variable `art_alle_registrert`) 
+with the species names in the Alien Species List 2018:
+```{r}
+ANO$fa_registrert <- 0
+AlienSpecies <- c()
+for (i in fab$Name) {
+  w <- which(ANO$art_alle_registrert %contains% gsub(" ", "_", tolower(i)))
+  AlienSpecies <- c(AlienSpecies, rep(i, length(w)))
+  ANO$fa_registrert[w] <- ANO$fa_registrert[w] + 1
+}
+```
+
+
+## Calculations
+¤¤¤
+```{r}
+table(ANO$fa_total_dekning > 0, ANO$MES, useNA="always")
+```
+
+
+```{r}
+summary(ANO$fa_total_dekning)
+table(ANO$fa_registrert, useNA="always")
+```
+
+
+
+```{r}
+table(AlienSpecies)
+table(ANO$fa_total_dekning > 0, ANO$fa_registrert, useNA="always")
+```
+
+```{r}
+ANO$fa_total_dekning[ANO$fa_registrert > 0] <- sapply(ANO$fa_total_dekning[ANO$fa_registrert > 0], max, 0.1, na.rm = TRUE)
+```
+
+```{r}
+sum(ANO$fa_total_dekning, na.rm = TRUE) / nrow(ANO)
+```
+
+```{r}
+length(which(ANO$fa_total_dekning > 0)) / nrow(ANO)
+table(ANO$MES[ANO$fa_total_dekning > 0])
+table(ANO$MES[ANO$fa_total_dekning > 0]) / table(ANO$MES)
+```
+
+
+
+#table(ANO$aar, useNA="always")
+#table(ANO$hovedoekosystem_punkt, useNA="always")
+#table(ANO$utilgjengelig_punkt, useNA="always")
+#table(ANO$kartleggingsenhet_1m2, useNA="always")
+##table(ANO$hovedtype_1m2, useNA="always")
+#table(ANO$kartleggingsenhet_250m2, useNA="always")
+##table(ANO$hovedtype_250m2, useNA="always")
+
+#summary(ANO$fa_total_dekning)
+#table(ANO$fa_registrert, useNA="always")
