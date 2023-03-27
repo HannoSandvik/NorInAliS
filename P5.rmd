@@ -21,7 +21,7 @@ library(sf)
 
 Download data from the "spatially representative nature monitoring program for terrestrial ecosystems", 
 or **ANO**, by its Norwegian acronym 
-([Norwegian Environment Agency 2021](https://kartkatalog.miljodirektoratet.no/Dataset/Details/2054)):
+([Norwegian Environment Agency 2022](https://kartkatalog.miljodirektoratet.no/Dataset/Details/2054)):
 ```{r}
 download.file("https://nedlasting.miljodirektoratet.no/naturovervaking/naturovervaking_eksport.gdb.zip",
               "ANO.gdb.zip")
