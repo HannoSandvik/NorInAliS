@@ -50,7 +50,7 @@ It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no
 ### P5 – Alien species reported from monitoring
 **R** code for P5 is [available](P5.rmd).
 
-The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc); [Norwegian Environment Agency 2021](https://kartkatalog.miljodirektoratet.no/Dataset/Details/2054)).
+The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc); [Norwegian Environment Agency 2022](https://kartkatalog.miljodirektoratet.no/Dataset/Details/2054)).
 
 ## Threat (state)
 The threat category contains three indicators, for two of which there is **R** code.
