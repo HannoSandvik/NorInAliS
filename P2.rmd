@@ -188,7 +188,9 @@ aoo$high[w] <- 323000
 
 
 Show a graph of the distribution of the best estimates of total AOOs:
-```{r}
+```{r, fig.cap="Frequency distribution of the areas of occupancy of alien species in Norway"}
+# To produce Figure B-3, add:
+# png("P2-Fig1.png", 1000, 1000, res=180)
 par(mai=c(0.96, 0.96, 0.06, 0.06), lwd=1.8)
 H <- hist(log10(as.numeric(aoo$best)), breaks=seq(0, 6, 1/3),
   xlab="Area of occupancy (km²)", ylab="Number of species", main="",

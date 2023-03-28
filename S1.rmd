@@ -123,7 +123,9 @@ print(Table)
 
 
 Plot a graph of the temporal development since 1800:
-```{r}
+```{r, fig.cap="Novel introductions per year (grey) and running five-year mean (blue line) from 1800 to 2017"}
+# To produce Figure B-1, add:
+# png("S1-Fig1.png", 1500, 1200, res=180)
 par(mai=c(0.96, 0.96, 0.06, 0.06))
 plot(1796:2017, novelObs[1796:2017], ty="n",
   xlim=c(1800, 2020), ylim=c(0, 24), xaxs="i", yaxs="i",
@@ -139,7 +141,9 @@ box()
 
 
 Plot a graph for the years 1988 to 2017 comparing the data from 2012 and 2018:
-```{r}
+```{r, fig.cap="Novel introductions per year (grey) and running five-year mean (blue) from 1990 to 2017, according to the Alien Species Lists of 2012 and 2018, respectively"}
+# To produce Figure B-2, add:
+# png("S1-Fig2.png", 1500, 1200, res=180)
 par(mai=c(0.96, 0.96, 0.06, 0.06))
 plot(1800:2017, novelObs[1800:2017], ty="l", col=grey(0.72), lwd=2.4,
   xlim=c(1988, 2019), ylim=c(0, 24), xaxs="i", yaxs="i",
@@ -150,14 +154,14 @@ axis(2,    0:24,   F, T)
 lines(1980:2011,                novelObs.by2012[1980:2011],     col=grey(0.72), lwd=1.8, lty=2)
 lines(1800:2017+2, running.mean(novelObs       [1800:2017], 5), col="blue",     lwd=4.8)
 lines(1980:2011+2, running.mean(novelObs.by2012[1980:2011], 5), col="blue",     lwd=3.6, lty=2)
-lines(2008:2011, rep(22,4), col=grey(0.84), lwd=2.4)
-lines(2008:2011, rep(21,4), col=grey(0.84), lwd=1.8, lty=2)
-lines(2008:2011, rep(20,4), col="blue",     lwd=4.8)
-lines(2008:2011, rep(19,4), col="blue",     lwd=3.6, lty=2)
-text(2011, 22, "yearly figures 2018",  pos=4, cex=1.2)
-text(2011, 21, "yearly figures 2012",  pos=4, cex=1.2)
-text(2011, 20, "five-year means 2018", pos=4, cex=1.2)
-text(2011, 19, "five-year means 2012", pos=4, cex=1.2)
+lines(2006:2009, rep(23,4), col=grey(0.72), lwd=2.4)
+lines(2006:2009, rep(22,4), col=grey(0.72), lwd=1.8, lty=2)
+lines(2006:2009, rep(21,4), col="blue",     lwd=4.8)
+lines(2006:2009, rep(20,4), col="blue",     lwd=3.6, lty=2)
+text(2009, 23, "yearly figures 2018",  pos=4, cex=1.2)
+text(2009, 22, "yearly figures 2012",  pos=4, cex=1.2)
+text(2009, 21, "five-year means 2018", pos=4, cex=1.2)
+text(2009, 20, "five-year means 2012", pos=4, cex=1.2)
 box()
 ```
 
