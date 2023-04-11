@@ -47,14 +47,14 @@ asFreq  <- function(x) {
   # Note that input is in events per decade,
   #  whereas output is in events per year!
   sapply(x, function(z) switch(z,
-                               "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
+    "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
 }
 
 
 asAbund <- function(x) {
   # translates an abundance interval into a numerical value
   sapply(x, function(z) switch(z,
-                               "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
+    "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
 }
 
 
@@ -161,14 +161,14 @@ asFreq  <- function(x) {
   # Note that input is in events per decade,
   #  whereas output is in events per year!
   sapply(x, function(z) switch(z,
-                               "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
+    "<1"=0.07, "1-8"=0.5, "9-19"=1.4, ">19"=4.6, NA))
 }
 
 
 asAbund <- function(x) {
   # translates an abundance interval into a numerical value
   sapply(x, function(z) switch(z,
-                               "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
+    "1"=1, "2-10"=5, "11-100"=50, "101-1000"=500, ">1000"=5000, NA))
 }
 
 
@@ -311,7 +311,7 @@ P1b <- function(dataset, column = c("minImp", "Impact", "maxImp")) {
 
 f <- function(s, mean, q1, q3) return(
   (q1 - qlnorm(0.25, log(mean) - exp(2*s)/2, exp(s)))^2 +
-    (q3 - qlnorm(0.75, log(mean) - exp(2*s)/2, exp(s)))^2
+  (q3 - qlnorm(0.75, log(mean) - exp(2*s)/2, exp(s)))^2
 )
 
 
