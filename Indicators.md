@@ -1,5 +1,5 @@
 # List of indicators
-This list contains all Norwegian Indicators for Alien Species. Where applicable, links to **R** Markdown files are provided. In addition, the **R** functions defined and used are available as [**R** script](function.r).
+This list contains all Norwegian Indicators for Alien Species. Where applicable, links to Markdown pages are provided. (The underlying **R** Markdown files are in the folder [Rmd](Rmd/).) In addition, the **R** functions defined and used are available as [**R** script](function.r).
 
 ## Spread (pathways)
 The spread category contains four indicators, for all of which there is **R** code.
@@ -15,12 +15,12 @@ The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10
 The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S3 – Active pathways of secondary spread
-**R** code for S3 is [available](S3.rmd). It contains some indicator-specific [functions](function.r).
+**R** code for S3 is [available](S3.md). It contains some indicator-specific [functions](function.r).
 
 The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S4 – Import rate reported from monitoring
-**R** code for S4 is [available](S4.rmd).
+**R** code for S4 is [available](S4.md).
 
 It utilises data that have been read from NINA's [survey of stowaways in imported ornamental plants](https://view.nina.no/planteimport/).
 
@@ -28,27 +28,27 @@ It utilises data that have been read from NINA's [survey of stowaways in importe
 The pressure category contains five indicators, for all of which there is **R** code.
 
 ### P1 – Number of alien species
-**R** code for P1 is [available](P1.rmd). It contains some indicator-specific [functions](function.r).
+**R** code for P1 is [available](P1.md). It contains some indicator-specific [functions](function.r).
 
 The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P2 – Extent of terrestrial alien species
-**R** code for P2 is [available](P2.rmd). It contains some indicator-specific [functions](function.r).
+**R** code for P2 is [available](P2.md). It contains some indicator-specific [functions](function.r).
 
 The scripts reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P3 – Extent of alien freshwater species
-**R** code for P3 is [available](P3.rmd).
+**R** code for P3 is [available](P3.md).
 
 It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P4 – Extent of marine alien species
-**R** code for P4 is [available](P4.rmd).
+**R** code for P4 is [available](P4.md).
 
 It utilises data that have been downloaded from [Vann-nett](https://vann-nett.no/) and reads an external dataset ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc)).
 
 ### P5 – Alien species reported from monitoring
-**R** code for P5 is [available](P5.rmd).
+**R** code for P5 is [available](P5.md).
 
 The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc); [Norwegian Environment Agency 2022](https://kartkatalog.miljodirektoratet.no/Dataset/Details/2054)).
 
@@ -90,7 +90,7 @@ The indicators are:
 The effect category contains four indicators, for one of which there is **R** code.
 
 ### E1 – Alien species eradicated
-**R** code for E1 is [available](E1.rmd).
+**R** code for E1 is [available](E1.md).
 
 It utilises data that have been published by Sandvik et al. ([2019](https://doi.org/10.1007/s10530-019-02058-x)).
 
