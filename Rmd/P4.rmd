@@ -2,9 +2,9 @@
 title: P4
 subtitle: Extent of marine alien species
 author: Hanno Sandvik
-date: 16 March 2023
+date: 18 May 2023
 output:
-  html_document:
+  md_document:
     toc: true
 ---
 
@@ -30,7 +30,7 @@ Load data from the Alien Species List 2018
 fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
                   as.is=T)
 ```
-The AOOs (areas of occupancy) provided in the above dataset are only the _best_
+The AOOs (areas of occupancy, in km^2^) provided in the above dataset are only the _best_
 estimates of the _total_ AOO for each species (i.e. the _median_ expert judgement
 of the _real_ AOO, including "dark figures" or unreported occurrences). However,
 in order to quantify uncertainty, P2 needs more than that, viz. the _low_ and 
@@ -38,7 +38,7 @@ _high_ estimates of the total AOO (i.e. lower and upper _quartiles_) as well as
 the _known_ AOO (i.e. excluding dark figures). These values are here read from a
 separate file. Their source is https://artsdatabanken.no/fremmedartslista2018.
 ```{r}
-aoo <- read.csv2("cache/aoo.txt", as.is=T)
+aoo <- read.csv2("../cache/aoo.csv", as.is=T)
 ```
 
 
@@ -98,7 +98,7 @@ if (all(fab$Name == aoo$Name)) {
 Load the relevant data from the reporting system for the Water Framework Directive 
 (WFD) in Norway (for details, [see indicator P3](P3.rmd)):
 ```{r}
-WFD <- read.csv("cache/WFD.csv", sep=";", dec=".", as.is=TRUE)
+WFD <- read.csv("../cache/WFD.csv", sep=";", dec=".", as.is=TRUE, encoding="latin1")
 ```
 
 

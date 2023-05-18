@@ -2,9 +2,9 @@
 title: P3
 subtitle: Extent of alien freshwater species
 author: Hanno Sandvik
-date: 16 March 2023
+date: 18 May 2023
 output:
-  html_document:
+  md_document:
     toc: true
 ---
 
@@ -26,7 +26,7 @@ alien species recorded, its ecological impact category, and whether the species
 is regionally alien (i.e. displaced within Norway, `TRUE`) or 
 nationally alien (`FALSE`).
 ```{r}
-WFD <- read.csv("cache/WFD.csv", sep=";", dec=".", as.is=TRUE)
+WFD <- read.csv("../cache/WFD.csv", sep=";", dec=".", as.is=TRUE, encoding="latin1")
 head(WFD)
 ```
 
@@ -52,7 +52,7 @@ Load data from the Alien Species List 2018
 ```{r}
 fab <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
                  as.is=T)
-aoo <- read.csv2("cache/aoo.txt", as.is=T)
+aoo <- read.csv2("../cache/aoo.csv", as.is=T)
 ```
 
 

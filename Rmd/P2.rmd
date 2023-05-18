@@ -1,8 +1,8 @@
 ---
 title: "P2"
-subtitle: Extent of terrestrial alien species
+subtitle: "Extent of terrestrial alien species"
 author: "Hanno Sandvik"
-date: "15 March 2023"
+date: "18 May 2023"
 output:
   md_document:
     toc: yes
@@ -19,7 +19,7 @@ Load data from the Alien Species List 2018
 fab  <- read.csv2(url("https://datadryad.org/stash/downloads/file_stream/359484"),
                   as.is=T)
 ```
-The AOOs (areas of occupancy) provided in the above dataset are only the _best_
+The AOOs (areas of occupancy, in km^2^) provided in the above dataset are only the _best_
 estimates of the _total_ AOO for each species (i.e. the _median_ expert judgement
 of the _real_ AOO, including "dark figures" or unreported occurrences). However,
 in order to quantify uncertainty, P2 needs more than that, viz. the _low_ and 
@@ -27,7 +27,7 @@ _high_ estimates of the total AOO (i.e. lower and upper _quartiles_) as well as
 the _known_ AOO (i.e. excluding dark figures). These values are here read from a
 separate file. Their source is https://artsdatabanken.no/fremmedartslista2018.
 ```{r}
-aoo <- read.csv2("cache/aoo.txt", as.is=T)
+aoo <- read.csv2("../cache/aoo.csv", as.is=T)
 head(aoo)
 ```
 
@@ -221,7 +221,7 @@ conf  <- quantile(apply(AOO, 1, sum), c(0.025, 0.25, 0.5, 0.75, 0.975))
 
 ```{r, eval=TRUE, echo=FALSE}
 # To save time during rendering, a previous run is loaded:
-load("cache/P2.RData")
+load("../cache/P2.RData")
 # This file contains the three variables `avg`, `stdev` and `conf`
 ```
 

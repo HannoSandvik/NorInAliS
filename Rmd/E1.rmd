@@ -4,7 +4,7 @@ subtitle: Alien species eradicated
 author: Hanno Sandvik
 date: 12 March 2023
 output:
-  html_document:
+  md_document:
     toc: true
 ---
 
@@ -15,7 +15,7 @@ This code calculates indicator E1 of [NorInAliS](https://github.com/HannoSandvik
 ## Preparations
 Load the establishment categories from the Alien Species List 2018:
 ```{r}
-EstablishmentCategories2018  <- read.csv2("cache/a-e.csv", as.is=T)
+EstablishmentCategories2018  <- read.csv2("../cache/a-e.csv", as.is=T)
 ```
 This file consists of the two columns "Name" and "CategN" of the sheet "List I" 
 of the Excel workbook which is Online Resource 1 of 
