@@ -5,12 +5,12 @@ This list contains all Norwegian Indicators for Alien Species. Where applicable,
 The spread category contains four indicators, for all of which there is **R** code.
 
 ### S1 – Introduction rate of novel alien species
-**R** code for S1 is [available](S1.rmd).
+**R** code for S1 is [available](S1.md).
 
 The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
 ### S2 – Active pathways of introduction
-**R** code for S2 is [available](S2.rmd). It contains some indicator-specific [functions](function.r).
+**R** code for S2 is [available](S2.md). It contains some indicator-specific [functions](function.r).
 
 The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10.5061/dryad.8sf7m0cjc), [2022](https://doi.org/10.5061/dryad.4b8gthtg7)).
 
