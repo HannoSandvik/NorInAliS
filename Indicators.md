@@ -56,10 +56,10 @@ The script reads two external datasets ([Sandvik et al. 2020](https://doi.org/10
 The threat category contains three indicators, for two of which there is **R** code.
 
 ### T1 – Threat to native species
-**R** code for T1 will be published elsewhere.
+**R** code for T1 has been published [elsewhere](https://doi.org/10.5281/zenodo.7843806) ([Sandvik & Pedersen 2023](https://doi.org/10.1111/cobi.14105)).
 
 ### T2 – Threat to ecosystems
-**R** code for T2 will be published elsewhere.
+**R** code for T2 has been published [elsewhere](https://doi.org/10.5281/zenodo.7843806) ([Sandvik & Pedersen 2023](https://doi.org/10.1111/cobi.14105)).
 
 ### T3 – Threat to ecosystem services
 For indicator T3, no **R** code is available.
