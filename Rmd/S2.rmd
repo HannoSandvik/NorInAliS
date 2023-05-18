@@ -2,9 +2,9 @@
 title: S2
 subtitle: Active pathways of introduction
 author: Hanno Sandvik
-date: 12 March 2023
+date: 18 May 2023
 output:
-  html_document:
+  md_document:
     toc: true
 ---
 
@@ -172,9 +172,9 @@ Summarise available data on frequency and abundance:
 {
   N <- length(which(path$Introd & path$Time == "current"))
   cat("Distribution of frequencies of introduction events (per decade):\n")
-  print(table(path$Freq )[c(1, 3, 4, 2, 5   )] / N)
+  print(round(table(path$Freq )[c(1, 3, 4, 2, 5   )] / N, 4))
   cat("\n\nDistribution of abundances (individuals) per introduction event:\n")
-  print(table(path$Abund)[c(2, 5, 4, 3, 1, 6)] / N)
+  print(round(table(path$Abund)[c(2, 5, 4, 3, 1, 6)] / N, 4))
 }
 ```
 
@@ -192,15 +192,15 @@ S2b_results <- S2b(path, nsim=100000)
 
 ```{r, eval=TRUE, echo=FALSE}
 # To save time during rendering, a previous run is loaded:
-load("cache/S2.RData")
+load("../cache/S2.RData")
 # This file contains a vector named `S2b_results`
 ```
 
 ``` {r}
 {
-  cat("\nIndicator value for S2(a): " %+%       S2a(path),    "\n")
-  cat("\nIndicator value for S2(b):\n");  print(S2b_results)
-  cat("\nIndicator value for S2(c): " %+% round(S2c(path)), "\n\n")
+  cat("\nIndicator value for S2(a): " %+%             S2a(path),    "\n")
+  cat("\nIndicator value for S2(b):\n");  print(round(S2b_results))
+  cat("\nIndicator value for S2(c): " %+%       round(S2c(path)), "\n\n")
 }
 ```
 
@@ -217,11 +217,11 @@ for (pw in c("release", "escape", "contaminant", "stowaway", "unaided")) {
 
 ```{r, eval=TRUE, echo=FALSE}
 # To save time during rendering, a previous run is loaded:
-load("cache/S2.RData")
+load("../cache/S2.RData")
 # This file contains a list named `S2b_disaggr`
 for (pw in c("release", "escape", "contaminant", "stowaway", "unaided")) {
   cat("\n\n" %+% pw %+% ":\n")
-  print(S2b_disaggr[[pw]])
+  print(round(S2b_disaggr[[pw]]))
 }
 ```
 
